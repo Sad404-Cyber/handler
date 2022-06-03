@@ -3339,7 +3339,7 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 `
                 let btn = [{
                                 urlButton: {
-                                    displayText: 'Source Code',
+                                    displayText: 'Instagram',
                                     url: 'https://instagram.com/hafidzabdillh_'
                                 }
                             }, {
