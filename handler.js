@@ -1617,7 +1617,7 @@ break
 	    break
 	       case 'attp': case 'ttp': {
            if (!text) throw `Example : ${prefix + command} text`
-           await kagura.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'kagura', 'morou', m, {asSticker: true})
+           await kagura.sendMedia(m.chat, `https://api.lolhuman.xyz/api/${command}?apikey=sayajiro&text=${text}`, 'kagura', 'morou', m, {asSticker: true})
 
          }
          break
