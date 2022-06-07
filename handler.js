@@ -3324,23 +3324,38 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #stalk [option] [query]
 
  ❏ *Random Menu*
-• #coffe
-• #quotesanime
-• #motivasi
-• #dilanquote
-• #bucinquote
-• #katasenja
-• #puisi
-• #couple
-• #anime
-• #waifu
-• #husbu
-• #neko
-• #shinobu
-• #waifus (nsfw)
-• #nekos (nsfw)
-• #trap (nsfw)
-• #blowjob (nsfw)
+${prefix}art
+${prefix}bts
+${prefix}exo
+${prefix}elf
+${prefix}loli
+${prefix}neko
+${prefix}waifu
+${prefix}shota
+${prefix}husbu
+${prefix}sagiri
+${prefix}shinobu
+${prefix}megumin
+${prefix}wallnime
+${prefix}chiisaihentai
+${prefix}trap
+${prefix}blowjob
+${prefix}yaoi
+${prefix}ecchi
+${prefix}hentai
+${prefix}ahegao
+${prefix}hololewd
+${prefix}sideoppai
+${prefix}animefeets
+${prefix}animebooty
+${prefix}animethighss
+${prefix}hentaiparadise
+${prefix}animearmpits
+${prefix}hentaifemdom
+${prefix}lewdanimegirls
+${prefix}biganimetiddies
+${prefix}animebellybutton
+${prefix}hentai4everyone
 
  ❏ *Text Pro Menu*
 • #blackpink
