@@ -1925,10 +1925,44 @@ break
                 kagura.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
             }
             break
-            case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
-                m.reply(mess.wait)
-                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/'+command, {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
-            }
+            // Random Image //
+        case 'art':
+        case 'bts':
+        case 'exo':
+        case 'elf':
+        case 'loli':
+        case 'neko':
+        case 'waifu':
+        case 'shota':
+        case 'husbu':
+        case 'sagiri':
+        case 'shinobu':
+        case 'megumin':
+        case 'wallnime':
+        case 'quotesimage':
+            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=${apikey}` } })
+            break
+
+        case 'chiisaihentai':
+        case 'trap':
+        case 'blowjob':
+        case 'yaoi':
+        case 'ecchi':
+        case 'hentai':
+        case 'ahegao':
+        case 'hololewd':
+        case 'sideoppai':
+        case 'animefeets':
+        case 'animebooty':
+        case 'animethighss':
+        case 'hentaiparadise':
+        case 'animearmpits':
+        case 'hentaifemdom':
+        case 'lewdanimegirls':
+        case 'biganimetiddies':
+        case 'animebellybutton':
+        case 'hentai4everyone':
+            kagura.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=ThadzBotZ` } })
             break
 	    case 'couple': {
                 m.reply(mess.wait)
