@@ -2293,7 +2293,7 @@ break
                 } else if (type.toLowerCase() == 'ig') {
                     if (!id) throw `No Query username, Example : ${prefix + command} ig cak_haho`
                     let { result: anu } = await fetchJson(api('zenz', '/api/stalkig', + id, 'apikey'))
-                    kagura.sendMedia(m.chat, anu.result.photo_profile, '', `⭔ Full Name : ${anu.result.fullname}\n⭔ User Name : ${anu.result.username}\n⭔ Followers : ${anu.result.followers}\n⭔ Following : ${anu.result.following}\n⭔ Bio : ${anu.result.bio}`, m)
+                    kagura.sendMedia(m.chat, anu.photo_profile, '', `⭔ Full Name : ${anu.fullname}\n⭔ User Name : ${anu.username}\n⭔ Followers : ${anu.followers}\n⭔ Following : ${anu.following}\n⭔ Bio : ${anu.bio}`, m)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
                     if (!id) throw `No Query username, Example : ${prefix + command} npm scrape-primbon`
