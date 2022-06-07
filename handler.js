@@ -1864,7 +1864,7 @@ break
 	    case 'ytmp3': case 'ytaudio': {
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27`
             axios
-                .get(api('zenz', '/api/ytaudio2',  { url: text }, 'apikey'))
+                .get(`https://api.lolhuman.xyz/api/ytaudio2?apikey=ThadzBotZ&url=${text}`)
                 .then(({ data }) => {
                     var caption = `❖ Title    : *${data.result.title}*\n`
                     caption += `❖ Size     : *${data.result.size}*`
