@@ -721,15 +721,36 @@ m.reply(`  ❏ *Photo Oxy Menu*
 break
 case 'mn10': {
 m.reply(`  ❏ *Ephoto Menu*
- › #ffcover
- › #crossfire
- › #galaxy
- › #glass
- › #neon
- › #beach
- › #blackpink
- › #igcertificate
- › #ytcertificate`)
+› #wetglass
+› #multicolor3d
+› #watercolor
+› #luxurygold
+› #galaxywallpaper
+› #lighttext
+› #beautifulflower
+› #puppycute
+› #royaltext
+› #heartshaped
+› #birthdaycake
+› #galaxystyle
+› #hologram3d
+› #greenneon
+› #glossychrome
+› #greenbush
+› #metallogo
+› #noeltext
+› #glittergold
+› #textcake
+› #starsnight
+› #wooden3d
+› #textbyname
+› #writegalacy
+› #galaxybat
+› #snow3d
+› #birthdayday
+› #goldplaybutton
+› #silverplaybutton
+› #freefire`)
 }
 break
 case 'mn11': {
