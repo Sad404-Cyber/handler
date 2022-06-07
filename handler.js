@@ -1868,8 +1868,8 @@ break
                 .then(({ data }) => {
                     var caption = `❖ Title    : *${data.result.title}*\n`
                     caption += `❖ Size     : *${data.result.size}*`
-                    kagura.sendMessage(from, { image: { url: data.result.thumbnail }, caption }).then(() => {
-                        kagura.sendMessage(from, { audio: { url: data.result.link }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
+                    kagura.sendMessage(m.chat, { image: { url: data.result.thumbnail }, caption }).then(() => {
+                        kagura.sendMessage(m.chat, { audio: { url: data.result.link }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
                     })
                 })
                 .catch(console.error)
