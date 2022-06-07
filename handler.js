@@ -1866,6 +1866,7 @@ break
             axios
                 .get(`https://api.lolhuman.xyz/api/ytaudio2?apikey=ThadzBotZ&url=${text}`)
                 .then(({ data }) => {
+                	if (data.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
                     var caption = `❖ Title    : *${data.result.title}*\n`
                     caption += `❖ Size     : *${data.result.size}*`
                     kagura.sendMessage(m.chat, { image: { url: data.result.thumbnail }, caption }).then(() => {
