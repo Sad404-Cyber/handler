@@ -544,7 +544,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                kagura.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/7168c92bfa11b6029d47b.jpg' }, caption: `*Hai Kak ${m.pushName}*\n\n Bot Rental Prices\n⭔ 20k Per Group via E-Walet 1 Month\n⭔ 25k via pulsa 1 Month\n\n Premium Price Bot\n⭔ 8k per User 1 bulan\n\nPayment can be via Dana/Ovo/Gopay\n\nFor more details, you can chat with the owner\nhttps://wa.me/628895656884 (Hafidz)\n\nDonate For Me : \n\n⭔ Saweria : https://saweria.co/HafidzAbdillah` }, { quoted: m })
+                kagura.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/7168c92bfa11b6029d47b.jpg' }, caption: `*Hai Kak ${m.pushName}*\n\n Bot Rental Prices\n⭔ 10k Per Group via E-Walet 1 Month\n⭔ 20k via pulsa 1 Month\n\n Premium Price Bot\n⭔ 8k per User 1 bulan\n\nPayment can be via Dana/Ovo/Gopay\n\nFor more details, you can chat with the owner\nhttps://wa.me/628895656884 (Hafidz)\n\nDonate For Me : \n\n⭔ Saweria : https://saweria.co/HafidzAbdillah` }, { quoted: m })
             }
             break
             
