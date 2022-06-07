@@ -2316,7 +2316,7 @@ break
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { url: anu.result },
+                    video: { url: anu.data.result },
                     caption: `Download From ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
