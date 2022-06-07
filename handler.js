@@ -2008,7 +2008,7 @@ break
              {
                 if (!text) throw 'No Query Text'
                 m.reply(mess.wait)
-                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/api/photooxy1/' + command, { text: text }, 'apikey') }, caption: `Photo Oxy ${command}` }, { quoted: m })
+                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/api/ephoto1/' + command, { text: text }, 'apikey') }, caption: `Ephoto 360 ${command}` }, { quoted: m })
             }
             break
 	    // Photo Oxy //
