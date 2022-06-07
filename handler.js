@@ -1989,7 +1989,7 @@ break
             case 'ffcover': case 'crossfire': case 'galaxy': case 'glass': case 'neon': case 'beach': case 'blackpink': case 'igcertificate': case 'ytcertificate': {
                 if (!text) throw 'No Query Text'
                 m.reply(mess.wait)
-                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/textprome/' + command, { text: text }, 'apikey') }, caption: `Textprome ${command}` }, { quoted: m })
+                kagura.sendMessage(m.chat, { image: { url: api('zenz', 'api/textprome/' + command, { text: text }, 'apikey') }, caption: `Textprome ${command}` }, { quoted: m })
             }
             break
 	    case 'nomerhoki': case 'nomorhoki': {
