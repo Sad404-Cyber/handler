@@ -707,17 +707,29 @@ break
 case 'mn9': {
 m.reply(`  ❏ *Photo Oxy Menu*
  • #shadow
- • #romantic
- • #smoke
- • #burnpapper
- • #naruto
- • #lovemsg
- • #grassmsg
- • #lovetext
- • #coffecup
- • #butterfly
- • #harrypotter
- • #retrolol`)
+• #cup
+• #cup1
+• #romance
+• #smoke
+• #burnpaper
+• #lovemessage
+• #undergrass
+• #love
+• #coffe
+• #woodheart
+• #woodenboard
+• #summer3d
+• #wolfmetal
+• #nature3d
+• #underwater
+• #golderrose
+• #summernature
+• #letterleaves
+• #glowingneon
+• #fallleaves
+• #flamming
+• #harrypotter
+• #carvedwood`)
 }
 break
 case 'mn10': {
