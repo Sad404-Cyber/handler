@@ -1784,54 +1784,69 @@ break
 	    })
 	    }
 	    break
-	    case 'yts': case 'ytsearch': {
-                if (!text) throw `Example : ${prefix + command} story wa anime`
-                let yts = require("yt-search")
-                let search = await yts(text)
-                let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
-                let no = 1
-                for (let i of search.all) {
-                    teks += `⭔ No : ${no++}\n⭔ Type : ${i.type}\n⭔ Video ID : ${i.videoId}\n⭔ Title : ${i.title}\n⭔ Views : ${i.views}\n⭔ Duration : ${i.timestamp}\n⭔ Upload At : ${i.ago}\n⭔ Author : ${i.author.name}\n⭔ Url : ${i.url}\n\n─────────────────\n\n`
-                }
-                kagura.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+	    // Searching
+        case 'gimage':
+        case 'konachan':
+        case 'wallpapersearch':
+            if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
+            if (command === 'wallpapersearch') {
+                command = 'wallpaper'
             }
+            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&query=${full_args}` } })
             break
-        case 'google': {
-                if (!text) throw `Example : ${prefix + command} fatih arridho`
-                let google = require('google-it')
-                google({'query': text}).then(res => {
-                let teks = `Google Search From : ${text}\n\n`
-                for (let g of res) {
-                teks += `⭔ *Title* : ${g.title}\n`
-                teks += `⭔ *Description* : ${g.snippet}\n`
-                teks += `⭔ *Link* : ${g.link}\n\n────────────────────────\n\n`
-                } 
-                m.reply(teks)
-                })
+        case 'gimage2':
+            if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
+            axios.get(`https://api.lolhuman.xyz/api/gimage2?apikey=ThadzBotZ&query=${full_args}`).then(({ data }) => {
+                for (var x of data.result.slice(0, 5)) {
+                    sock.sendMessage(from, { image: { url: x } })
                 }
-                break
-        case 'gimage': {
-        if (!text) throw `Example : ${prefix + command} kaori cicak`
-        let gis = require('g-i-s')
-        gis(text, async (error, result) => {
-        n = result
-        images = n[Math.floor(Math.random() * n.length)].url
-        let buttons = [
-                    {buttonId: `gimage ${text}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: images },
-                    caption: `*-------「 GIMAGE SEARCH 」-------*
-🤠 *Query* : ${text}
-🔗 *Media Url* : ${images}`,
-                    footer: kagura.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
-        })
-        }
-        break
+            })
+            break
+        case 'wallpapersearch2':
+            if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
+            axios.get(`https://api.lolhuman.xyz/api/wallpaper2?apikey=ThadzBotZ&query=${full_args}`).then(({ data }) => {
+                sock.sendMessage(from, { image: { url: data.result } })
+            })
+            break
+        case 'playstore':
+            if (args.length == 0) return reply(`Example: ${prefix + command} telegram`)
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/playstore?apikey=ThadzBotZ&query=${full_args}`)
+            var text = 'Play Store Search : \n'
+            for (var x of data.result) {
+                text += `Name : ${x.title}\n`
+                text += `ID : ${x.appId}\n`
+                text += `Developer : ${x.developer}\n`
+                text += `Link : ${x.url}\n`
+                text += `Price : ${x.priceText}\n`
+                text += `Price : ${x.price}\n\n`
+            }
+            reply(text)
+            break
+        case 'shopee':
+            if (args.length == 0) return reply(`Example: ${prefix + command} tas gendong`)
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/shopee?apikey=ThadzBotZ&query=${full_args}`)
+            var text = 'Shopee Search : \n'
+            for (var x of data.result) {
+                text += `Name : ${x.name}\n`
+                text += `Terjual : ${x.sold}\n`
+                text += `Stock : ${x.stock}\n`
+                text += `Lokasi : ${x.shop_loc}\n`
+                text += `Link : ${x.link_produk}\n\n`
+            }
+            reply(text)
+            break
+        case 'google':
+            if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/gsearch?apikey=ThadzBotZ&query=${full_args}`)
+            var text = 'Google Search : \n'
+            for (var x of data.result) {
+                text += `Title : ${x.title}\n`
+                text += `Link : ${x.link}\n`
+                text += `Desc : ${x.desc}\n\n`
+            }
+            reply(text)
+            break
+
 	    case 'play': case 'ytplay': {
                 if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
@@ -1940,7 +1955,7 @@ break
         case 'megumin':
         case 'wallnime':
         case 'quotesimage':
-            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=${apikey}` } })
+            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=ThadzBotZ` } })
             break
 
         case 'chiisaihentai':
