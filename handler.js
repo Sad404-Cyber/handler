@@ -1980,7 +1980,31 @@ break
                 kagura.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
 	    }
             break
-	    case 'shadow': case 'romantic': case 'smoke': case 'burnpapper': case 'naruto': case 'lovemsg': case 'grassmsg': case 'lovetext': case 'coffecup': case 'butterfly': case 'harrypotter': case 'retrolol': {
+	    // Photo Oxy //
+        case 'shadow':
+        case 'cup':
+        case 'cup1':
+        case 'romance':
+        case 'smoke':
+        case 'burnpaper':
+        case 'lovemessage':
+        case 'undergrass':
+        case 'love':
+        case 'coffe':
+        case 'woodheart':
+        case 'woodenboard':
+        case 'summer3d':
+        case 'wolfmetal':
+        case 'nature3d':
+        case 'underwater':
+        case 'golderrose':
+        case 'summernature':
+        case 'letterleaves':
+        case 'glowingneon':
+        case 'fallleaves':
+        case 'flamming':
+        case 'harrypotter':
+        case 'carvedwood': {
                 if (!text) throw 'No Query Text'
                 m.reply(mess.wait)
                 kagura.sendMessage(m.chat, { image: { url: api('zenz', '/photooxy/' + command, { text: text }, 'apikey') }, caption: `Photo Oxy ${command}` }, { quoted: m })
