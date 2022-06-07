@@ -1884,8 +1884,8 @@ break
                 	if (data.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(data))
                     var caption = `❖ Title    : *${data.result.title}*\n`
                     caption += `❖ Size     : *${data.result.size}*`
-                    sock.sendMessage(from, { image: { url: data.result.thumbnail }, caption }).then(() => {
-                        sock.sendMessage(from, { audio: { url: data.result.link }, mimetype: 'video/mp4', fileName: `${data.result.title}.mp4` })
+                    kagura.sendMessage(from, { image: { url: data.result.thumbnail }, caption }).then(() => {
+                        kagura.sendMessage(from, { audio: { url: data.result.link }, mimetype: 'video/mp4', fileName: `${data.result.title}.mp4` })
                     })
                 })
                 .catch(console.error)
