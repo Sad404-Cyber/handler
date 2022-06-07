@@ -550,324 +550,324 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             
 case 'mn1': {
 m.reply(` ❏ *Group Menu*
- › #linkgroup
- › #ephemeral [option]
- › #setppgc [image]
- › #setname [text]
- › #setdesc [text]
- › #group [option]
- › #editinfo [option]
- › #add @user
- › #kick @user
- › #hidetag [text]
- › #tagall [text]
- › #antilink [on/off]
- › #mute [on/off]
- › #promote @user
- › #demote @user
- › #vote [text]
- › #devote
- › #upvote
- › #cekvote
- › #hapusvote`)
+ • #linkgroup
+ • #ephemeral [option]
+ • #setppgc [image]
+ • #setname [text]
+ • #setdesc [text]
+ • #group [option]
+ • #editinfo [option]
+ • #add @user
+ • #kick @user
+ • #hidetag [text]
+ • #tagall [text]
+ • #antilink [on/off]
+ • #mute [on/off]
+ • #promote @user
+ • #demote @user
+ • #vote [text]
+ • #devote
+ • #upvote
+ • #cekvote
+ • #hapusvote`)
 }
 break
 case 'mn2': {
 m.reply(`  ❏ *Main Menu*
- › #ping
- › #owner
- › #menu
- › #help
- › #delete
- › #infochat
- › #quoted
- › #listpc
- › #listgc
- › #listonline
- › #speedtest`)
+ • #ping
+ • #owner
+ • #menu
+ • #help
+ • #delete
+ • #infochat
+ • #quoted
+ • #listpc
+ • #listgc
+ • #listonline
+ • #speedtest`)
 }
 break
 case 'mn3': {
 m.reply(`  ❏ *Owner Menu*
- › #react [emoji]
- › #chat [option]
- › #join [link]
- › #leave
- › #block @user
- › #unblock @user
- › #bcgroup [text]
- › #bcall [text]
- › #setppbot [image]
- › #setexif
- › #setmenu [option]`)
+ • #react [emoji]
+ • #chat [option]
+ • #join [link]
+ • #leave
+ • #block @user
+ • #unblock @user
+ • #bcgroup [text]
+ • #bcall [text]
+ • #setppbot [image]
+ • #setexif
+ • #setmenu [option]`)
 }
 break
 case 'mn4': {
 m.reply(`  ❏ *Webzone Menu*
- › #playstore
- › #gsmarena
- › #jadwalbioskop
- › #nowplayingbioskop
- › #aminio
- › #wattpad
- › #webtoons
- › #drakor`)
+ • #playstore
+ • #gsmarena
+ • #jadwalbioskop
+ • #nowplayingbioskop
+ • #aminio
+ • #wattpad
+ • #webtoons
+ • #drakor`)
 }
 break
 case 'mn5': {
 m.reply(`  ❏ *Downloader Menu*
- › #tiktoknowm [url]
- › #tiktokwm [url]
- › #tiktokmp3 [url]
- › #instagram [url]
- › #twitter [url]
- › #twittermp3 [url]
- › #facebook [url]
- › #pinterestdl [url]
- › #ytmp3 [url]
- › #ytmp4 [url]
- › #getmusic [query]
- › #getvideo [query]
- › #umma [url]
- › #joox [query]
- › #soundcloud [url]`)
+ • #tiktoknowm [url]
+ • #tiktokwm [url]
+ • #tiktokmp3 [url]
+ • #instagram [url]
+ • #twitter [url]
+ • #twittermp3 [url]
+ • #facebook [url]
+ • #pinterestdl [url]
+ • #ytmp3 [url]
+ • #ytmp4 [url]
+ • #getmusic [query]
+ • #getvideo [query]
+ • #umma [url]
+ • #joox [query]
+ • #soundcloud [url]`)
 }
 break
 case 'mn6': {
 m.reply(`  ❏ *Search Menu*
- › #play [query]
- › #yts [query]
- › #google [query]
- › #gimage [query]
- › #pinterest [query]
- › #wallpaper [query]
- › #wikimedia [query]
- › #ytsearch [query]
- › #ringtone [query]
- › #stalk [option] [query]`)
+ • #play [query]
+ • #yts [query]
+ • #google [query]
+ • #gimage [query]
+ • #pinterest [query]
+ • #wallpaper [query]
+ • #wikimedia [query]
+ • #ytsearch [query]
+ • #ringtone [query]
+ • #stalk [option] [query]`)
 }
 break
 case 'mn7': {
 m.reply(`  ❏ *Random Menu*
- › #coffe
- › #quotesanime
- › #motivasi
- › #dilanquote
- › #bucinquote
- › #katasenja
- › #puisi
- › #couple
- › #anime
- › #waifu
- › #husbu
- › #neko
- › #shinobu
- › #waifus (nsfw)
- › #nekos (nsfw)
- › #trap (nsfw)
- › #blowjob (nsfw)`)
+ • #coffe
+ • #quotesanime
+ • #motivasi
+ • #dilanquote
+ • #bucinquote
+ • #katasenja
+ • #puisi
+ • #couple
+ • #anime
+ • #waifu
+ • #husbu
+ • #neko
+ • #shinobu
+ • #waifus (nsfw)
+ • #nekos (nsfw)
+ • #trap (nsfw)
+ • #blowjob (nsfw)`)
 }
 break
 case 'mn8': {
 m.reply(`  ❏ *Text Pro Menu*
- › #3dchristmas
- › #3ddeepsea
- › #americanflag
- › #3dscifi
- › #3drainbow
- › #3dwaterpipe
- › #halloweenskeleton
- › #sketch
- › #bluecircuit
- › #space
- › #metallic
- › #fiction
- › #greenhorror
- › #transformer
- › #berry
- › #thunder
- › #magma
- › #3dcrackedstone
- › #3dneonlight
- › #impressiveglitch
- › #naturalleaves
- › #fireworksparkle
- › #matrix
- › #dropwater
- › #harrypotter
- › #foggywindow
- › #neondevils
- › #christmasholiday
- › #3dgradient
- › #blackpink
- › #gluetext`)
+ • #3dchristmas
+ • #3ddeepsea
+ • #americanflag
+ • #3dscifi
+ • #3drainbow
+ • #3dwaterpipe
+ • #halloweenskeleton
+ • #sketch
+ • #bluecircuit
+ • #space
+ • #metallic
+ • #fiction
+ • #greenhorror
+ • #transformer
+ • #berry
+ • #thunder
+ • #magma
+ • #3dcrackedstone
+ • #3dneonlight
+ • #impressiveglitch
+ • #naturalleaves
+ • #fireworksparkle
+ • #matrix
+ • #dropwater
+ • #harrypotter
+ • #foggywindow
+ • #neondevils
+ • #christmasholiday
+ • #3dgradient
+ • #blackpink
+ • #gluetext`)
 }
 break
 case 'mn9': {
 m.reply(`  ❏ *Photo Oxy Menu*
- › #shadow
- › #romantic
- › #smoke
- › #burnpapper
- › #naruto
- › #lovemsg
- › #grassmsg
- › #lovetext
- › #coffecup
- › #butterfly
- › #harrypotter
- › #retrolol`)
+ • #shadow
+ • #romantic
+ • #smoke
+ • #burnpapper
+ • #naruto
+ • #lovemsg
+ • #grassmsg
+ • #lovetext
+ • #coffecup
+ • #butterfly
+ • #harrypotter
+ • #retrolol`)
 }
 break
 case 'mn10': {
 m.reply(`  ❏ *Ephoto Menu*
-› #wetglass
-› #multicolor3d
-› #watercolor
-› #luxurygold
-› #galaxywallpaper
-› #lighttext
-› #beautifulflower
-› #puppycute
-› #royaltext
-› #heartshaped
-› #birthdaycake
-› #galaxystyle
-› #hologram3d
-› #greenneon
-› #glossychrome
-› #greenbush
-› #metallogo
-› #noeltext
-› #glittergold
-› #textcake
-› #starsnight
-› #wooden3d
-› #textbyname
-› #writegalacy
-› #galaxybat
-› #snow3d
-› #birthdayday
-› #goldplaybutton
-› #silverplaybutton
-› #freefire`)
+• #wetglass
+• #multicolor3d
+• #watercolor
+• #luxurygold
+• #galaxywallpaper
+• #lighttext
+• #beautifulflower
+• #puppycute
+• #royaltext
+• #heartshaped
+• #birthdaycake
+• #galaxystyle
+• #hologram3d
+• #greenneon
+• #glossychrome
+• #greenbush
+• #metallogo
+• #noeltext
+• #glittergold
+• #textcake
+• #starsnight
+• #wooden3d
+• #textbyname
+• #writegalacy
+• #galaxybat
+• #snow3d
+• #birthdayday
+• #goldplaybutton
+• #silverplaybutton
+• #freefire`)
 }
 break
 case 'mn11': {
 m.reply(`  ❏ *Fun Menu*
- › #simih
- › #halah
- › #hilih
- › #huluh
- › #heleh
- › #holoh
- › #jadian
- › #jodohku
- › #delttt
- › #tictactoe
- › #family100
- › #tebak [option]
- › #math [mode]
- › #suitpvp [@tag]`)
+ • #simih
+ • #halah
+ • #hilih
+ • #huluh
+ • #heleh
+ • #holoh
+ • #jadian
+ • #jodohku
+ • #delttt
+ • #tictactoe
+ • #family100
+ • #tebak [option]
+ • #math [mode]
+ • #suitpvp [@tag]`)
 }
 break
 case 'mn12': {
 m.reply(`  ❏ *Primbon Menu*
- › #nomorhoki
- › #artimimpi
- › #artinama
- › #ramaljodoh
- › #ramaljodohbali
- › #suamiistri
- › #ramalcinta
- › #cocoknama
- › #pasangan
- › #jadiannikah
- › #sifatusaha
- › #rezeki
- › #pekerjaan
- › #nasib
- › #penyakit
- › #tarot
- › #fengshui
- › #haribaik
- › #harisangar
- › #harisial
- › #nagahari
- › #arahrezeki
- › #peruntungan
- › #weton
- › #karakter
- › #keberuntungan
- › #memancing
- › #masasubur
- › #zodiak
- › #shio`)
+ • #nomorhoki
+ • #artimimpi
+ • #artinama
+ • #ramaljodoh
+ • #ramaljodohbali
+ • #suamiistri
+ • #ramalcinta
+ • #cocoknama
+ • #pasangan
+ • #jadiannikah
+ • #sifatusaha
+ • #rezeki
+ • #pekerjaan
+ • #nasib
+ • #penyakit
+ • #tarot
+ • #fengshui
+ • #haribaik
+ • #harisangar
+ • #harisial
+ • #nagahari
+ • #arahrezeki
+ • #peruntungan
+ • #weton
+ • #karakter
+ • #keberuntungan
+ • #memancing
+ • #masasubur
+ • #zodiak
+ • #shio`)
 }
 break
 case 'mn13': {
 m.reply(`  ❏ *Convert Menu*
- › #attp
- › #ttp
- › #toimage
- › #removebg
- › #sticker
- › #emojimix
- › #emojimix2
- › #tovideo
- › #togif
- › #tourl
- › #tovn
- › #tomp3
- › #toaudio
- › #ebinary
- › #dbinary
- › #styletext
- › #smeme`)
+ • #attp
+ • #ttp
+ • #toimage
+ • #removebg
+ • #sticker
+ • #emojimix
+ • #emojimix2
+ • #tovideo
+ • #togif
+ • #tourl
+ • #tovn
+ • #tomp3
+ • #toaudio
+ • #ebinary
+ • #dbinary
+ • #styletext
+ • #smeme`)
 }
 break
 case 'mn14': {
 m.reply(`  ❏ *Database Menu*
- › #setcmd
- › #listcmd
- › #delcmd
- › #lockcmd
- › #addmsg
- › #listmsg
- › #getmsg
- › #delmsg`)
+ • #setcmd
+ • #listcmd
+ • #delcmd
+ • #lockcmd
+ • #addmsg
+ • #listmsg
+ • #getmsg
+ • #delmsg`)
 }
 break
 case 'mn15': {
 m.reply(`  ❏ *Anonymous Menu*
- › #anonymous
- › #start
- › #next
- › #keluar`)
+ • #anonymous
+ • #start
+ • #next
+ • #keluar`)
 }
 break
 case 'mn16': {
 m.reply(`  ❏ *Islamic Menu*
- › #iqra
- › #hadist
- › #alquran
- › #juzamma
- › #tafsirsurah`)
+ • #iqra
+ • #hadist
+ • #alquran
+ • #juzamma
+ • #tafsirsurah`)
 }
 break
 case 'mn17': {
 m.reply(`  ❏ *Voice Changer*
- › #bass
- › #blown
- › #deep
- › #earrape
- › #fast
- › #fat
- › #nightcore
- › #reverse
- › #robot
- › #slow
- › #tupai`)
+ • #bass
+ • #blown
+ • #deep
+ • #earrape
+ • #fast
+ • #fat
+ • #nightcore
+ • #reverse
+ • #robot
+ • #slow
+ • #tupai`)
 }
 break
             case 'chat': {
