@@ -670,37 +670,38 @@ m.reply(`  ❏ *Random Menu*
 break
 case 'mn8': {
 m.reply(`  ❏ *Text Pro Menu*
- • #3dchristmas
- • #3ddeepsea
- • #americanflag
- • #3dscifi
- • #3drainbow
- • #3dwaterpipe
- • #halloweenskeleton
- • #sketch
- • #bluecircuit
- • #space
- • #metallic
- • #fiction
- • #greenhorror
- • #transformer
- • #berry
- • #thunder
- • #magma
- • #3dcrackedstone
- • #3dneonlight
- • #impressiveglitch
- • #naturalleaves
- • #fireworksparkle
- • #matrix
- • #dropwater
- • #harrypotter
- • #foggywindow
- • #neondevils
- • #christmasholiday
- • #3dgradient
- • #blackpink
- • #gluetext`)
+• #blackpink
+• #neon
+• #greenneon
+• #advanceglow
+• #futureneon
+• #sandwriting
+• #sandsummer
+• #sandengraved
+• #metaldark
+• #neonlight
+• #holographic
+• #text1917
+• #minion
+• #deluxesilver
+• #newyearcard
+• #bloodfrosted
+• #halloween
+• #jokerlogo
+• #fireworksparkle
+• #natureleaves
+• #bokeh
+• #toxic
+• #strawberry
+• #box3d
+• #roadwarning
+• #breakwall
+• #icecold
+• #luxury
+• #cloud
+• #summersand
+• #horrorblood
+• #thunder`)
 }
 break
 case 'mn9': {
