@@ -1989,7 +1989,7 @@ break
             case 'ffcover': case 'crossfire': case 'galaxy': case 'glass': case 'neon': case 'beach': case 'blackpink': case 'igcertificate': case 'ytcertificate': {
                 if (!text) throw 'No Query Text'
                 m.reply(mess.wait)
-                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/ephoto/' + command, { text: text }, 'apikey') }, caption: `Ephoto ${command}` }, { quoted: m })
+                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/textprome/' + command, { text: text }, 'apikey') }, caption: `Ephoto ${command}` }, { quoted: m })
             }
             break
 	    case 'nomerhoki': case 'nomorhoki': {
@@ -2293,6 +2293,7 @@ break
                 } else if (type.toLowerCase() == 'ig') {
                     if (!id) throw `No Query username, Example : ${prefix + command} ig cak_haho`
                     let { result: anu } = await fetchJson(api('zenz', '/api/stalkig', { id }, 'apikey'))
+                    if (anu.status == false) return m.reply(anu.message)
                     kagura.sendMedia(m.chat, anu.result.photo_profile, '', `⭔ Full Name : ${anu.result.fullname}\n⭔ User Name : ${anu.result.username}\n⭔ Followers : ${anu.result.followers}\n⭔ Following : ${anu.result.following}\n⭔ Bio : ${anu.result.bio}`, m)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
