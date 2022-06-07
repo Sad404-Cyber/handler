@@ -1974,7 +1974,43 @@ break
                 kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-            
+// Ephoto 360 //
+        case 'wetglass':
+        case 'multicolor3d':
+        case 'watercolor':
+        case 'luxurygold':
+        case 'galaxywallpaper':
+        case 'lighttext':
+        case 'beautifulflower':
+        case 'puppycute':
+        case 'royaltext':
+        case 'heartshaped':
+        case 'birthdaycake':
+        case 'galaxystyle':
+        case 'hologram3d':
+        case 'greenneon':
+        case 'glossychrome':
+        case 'greenbush':
+        case 'metallogo':
+        case 'noeltext':
+        case 'glittergold':
+        case 'textcake':
+        case 'starsnight':
+        case 'wooden3d':
+        case 'textbyname':
+        case 'writegalacy':
+        case 'galaxybat':
+        case 'snow3d':
+        case 'birthdayday':
+        case 'goldplaybutton':
+        case 'silverplaybutton':
+        case 'freefire':
+             {
+                if (!text) throw 'No Query Text'
+                m.reply(mess.wait)
+                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/api/photooxy1/' + command, { text: text }, 'apikey') }, caption: `Photo Oxy ${command}` }, { quoted: m })
+            }
+            break
 	    // Photo Oxy //
         case 'shadow':
         case 'cup':
