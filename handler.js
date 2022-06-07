@@ -1866,7 +1866,7 @@ break
             axios
                 .get(`https://api.lolhuman.xyz/api/ytaudio2?apikey=ThadzBotZ&url=${text}`)
                 .then(({ data }) => {
-                	if (data.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
+                	if (data.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(data))
                     var caption = `❖ Title    : *${data.result.title}*\n`
                     caption += `❖ Size     : *${data.result.size}*`
                     kagura.sendMessage(m.chat, { image: { url: data.result.thumbnail }, caption }).then(() => {
@@ -1876,14 +1876,19 @@ break
                 .catch(console.error)
             }
             break
-            case 'ytmp4': case 'ytvideo': {
-                let { ytv } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
-                let quality = args[1] ? args[1] : '360p'
-                let media = await ytv(text, quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                kagura.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
-            }
+            case 'ytmp4':
+            if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27`
+            axios
+                .get(`https://api.lolhuman.xyz/api/ytvideo2?apikey=ThadzBotZ&url=${args[0]}`)
+                .then(({ data }) => {
+                	if (data.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(data))
+                    var caption = `❖ Title    : *${data.result.title}*\n`
+                    caption += `❖ Size     : *${data.result.size}*`
+                    sock.sendMessage(from, { image: { url: data.result.thumbnail }, caption }).then(() => {
+                        sock.sendMessage(from, { audio: { url: data.result.link }, mimetype: 'video/mp4', fileName: `${data.result.title}.mp4` })
+                    })
+                })
+                .catch(console.error)
             break
 	    case 'getmusic': {
                 let { yta } = require('./lib/y2mate')
