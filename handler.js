@@ -2007,7 +2007,7 @@ break
         case 'carvedwood': {
                 if (!text) throw 'No Query Text'
                 m.reply(mess.wait)
-                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/photooxy/' + command, { text: text }, 'apikey') }, caption: `Photo Oxy ${command}` }, { quoted: m })
+                kagura.sendMessage(m.chat, { image: { url: api('zenz', '/api/photooxy/' + command, { text: text }, 'apikey') }, caption: `Photo Oxy ${command}` }, { quoted: m })
             }
             break
 // TEXTPROME
