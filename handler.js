@@ -3324,38 +3324,38 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #stalk [option] [query]
 
  ❏ *Random Menu*
-${prefix}art
-${prefix}bts
-${prefix}exo
-${prefix}elf
-${prefix}loli
-${prefix}neko
-${prefix}waifu
-${prefix}shota
-${prefix}husbu
-${prefix}sagiri
-${prefix}shinobu
-${prefix}megumin
-${prefix}wallnime
-${prefix}chiisaihentai
-${prefix}trap
-${prefix}blowjob
-${prefix}yaoi
-${prefix}ecchi
-${prefix}hentai
-${prefix}ahegao
-${prefix}hololewd
-${prefix}sideoppai
-${prefix}animefeets
-${prefix}animebooty
-${prefix}animethighss
-${prefix}hentaiparadise
-${prefix}animearmpits
-${prefix}hentaifemdom
-${prefix}lewdanimegirls
-${prefix}biganimetiddies
-${prefix}animebellybutton
-${prefix}hentai4everyone
+• #art
+• #bts
+• #exo
+• #elf
+• #loli
+• #neko
+• #waifu
+• #shota
+• #husbu
+• #sagiri
+• #shinobu
+• #megumin
+• #wallnime
+• #chiisaihentai
+• #trap
+• #blowjob
+• #yaoi
+• #ecchi
+• #hentai
+• #ahegao
+• #hololewd
+• #sideoppai
+• #animefeets
+• #animebooty
+• #animethighss
+• #hentaiparadise
+• #animearmpits
+• #hentaifemdom
+• #lewdanimegirls
+• #biganimetiddies
+• #animebellybutton
+• #hentai4everyone
 
  ❏ *Text Pro Menu*
 • #blackpink
