@@ -3325,15 +3325,36 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #carvedwood
 
  ❏ *Ephoto Menu*
-• #ffcover
-• #crossfire
-• #galaxy
-• #glass
-• #neon
-• #beach
-• #blackpink
-• #igcertificate
-• #ytcertificate
+• #wetglass
+• #multicolor3d
+• #watercolor
+• #luxurygold
+• #galaxywallpaper
+• #lighttext
+• #beautifulflower
+• #puppycute
+• #royaltext
+• #heartshaped
+• #birthdaycake
+• #galaxystyle
+• #hologram3d
+• #greenneon
+• #glossychrome
+• #greenbush
+• #metallogo
+• #noeltext
+• #glittergold
+• #textcake
+• #starsnight
+• #wooden3d
+• #textbyname
+• #writegalacy
+• #galaxybat
+• #snow3d
+• #birthdayday
+• #goldplaybutton
+• #silverplaybutton
+• #freefire
 
  ❏ *Fun Menu*
 • #simih
