@@ -2496,7 +2496,7 @@ break
             case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-              axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=${args[0]}`).then(({ data }) => {
+              axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
                 kagura.sendMessage(from, { video: { url: data }, mimetype: 'video/mp4' })
             })
             }
