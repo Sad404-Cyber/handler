@@ -2546,9 +2546,9 @@ break
                 axios.get(`https://api.lolhuman.xyz/api/instagram?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
                 var url = data.result
                 if (url.includes('.mp4')) {
-                    sock.sendMessage(from, { video: { url }, mimetype: 'video/mp4' })
+                    kagura.sendMessage(from, { video: { url }, mimetype: 'video/mp4' })
                 } else {
-                    sock.sendMessage(from, { image: { url } })
+                    kagura.sendMessage(from, { image: { url } })
                 }
             })
             }
