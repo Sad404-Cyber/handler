@@ -2489,19 +2489,9 @@ break
 	        case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/tiktok3', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result },
-                    caption: `Download From ${text}`,
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 5
-                }
-                kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+                axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                kagura.sendMessage(from, { video: { url: data.result.link }, mimetype: 'video/mp4' })
+            })
             }
             break
             case 'tiktokwm': case 'tiktokwatermark': {
