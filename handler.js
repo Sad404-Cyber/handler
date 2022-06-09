@@ -54,6 +54,9 @@ module.exports = kagura = async (kagura, m, chatUpdate, store) => {
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
         const isMedia = /image|video|sticker|audio/.test(mime)
+        const reply = async (text) => {
+        return kagura.sendMessage(from, { text: text.trim() }, { quoted: m })
+    }
 	
         // Group
         const groupMetadata = m.isGroup ? await kagura.groupMetadata(m.chat).catch(e => {}) : ''
