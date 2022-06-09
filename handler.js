@@ -685,7 +685,7 @@ m.reply(`  ❏ *Random Menu*
 • #animebellybutton
 • #quotesanime
 • #quotesimage
-• #hentai4everyone
+• #hentai4everyone`)
 }
 break
 case 'mn8': {
