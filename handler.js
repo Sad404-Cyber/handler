@@ -1802,9 +1802,9 @@ break
             })
             break
         case 'wallpapersearch2':
-            if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
-            axios.get(`https://api.lolhuman.xyz/api/wallpaper2?apikey=ThadzBotZ&query=${full_args}`).then(({ data }) => {
-                sock.sendMessage(from, { image: { url: data.result } })
+            if (!text) throw `Example : ${prefix + command} story wa anime`
+            axios.get(`https://api.lolhuman.xyz/api/wallpaper2?apikey=ThadzBotZ&query=${text}`).then(({ data }) => {
+                kagura.sendMessage(from, { image: { url: data.result } })
             })
             break
         case 'playstore':
