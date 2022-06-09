@@ -3332,7 +3332,7 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #getvideo [query]
 • #umma [url]
 • #joox [query]
-• #soundcloud [url]
+• #sportify [url]
 
  ❏ *Search Menu*
 • #play [query]
