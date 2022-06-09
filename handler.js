@@ -3315,6 +3315,18 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #stalktwitter [query]
 • #stalkgithub [query]
 
+ ❏ *Other Menu*
+• #ssweb [query]
+• #ssweb2 [query]
+• #shortlink [query]
+• #gimage [query]
+• #pinterest [query]
+• #wallpaper [query]
+• #wikimedia [query]
+• #ytsearch [query]
+• #ringtone [query]
+• #stalk [option] [query]
+
  ❏ *Random Menu*
 • #art
 • #bts
