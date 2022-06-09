@@ -2455,6 +2455,21 @@ break
                 kagura.sendText(m.chat, `⭔ *Hasil :* ${anu.message}`, m)
             }
             break
+// Other
+        case 'ssweb':
+            if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
+            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/ssweb?apikey=${apikey}&url=${args[0]}` } })
+            break
+        case 'ssweb2':
+            if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
+            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/sswebfull?apikey=${apikey}&url=${args[0]}` } })
+            break
+        case 'shortlink':
+            if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
+            axios.get(`https://api.lolhuman.xyz/api/ouoshortlink?apikey=${apikey}&url=${args[0]}`).then(({ data }) => {
+                reply(data.result)
+            })
+            break
 	    // Stalk
         case 'stalkig':
             if (!text) throw `Example : ${prefix + command} hafidzabdillh_`
