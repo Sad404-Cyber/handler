@@ -2578,8 +2578,8 @@ break
                 caption += `Duration : ${data.result.duration}\n`
                 caption += `Popularity : ${data.result.popularity}\n`
                 caption += `Preview : ${data.result.preview_url}\n`
-                kagura.sendMessage(from, { image: { url: data.result.thumbnail }, caption }).then(() => {
-                    kagura.sendMessage(from, { audio: { url: data.result.link }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
+                kagura.sendMessage(m.chat, { image: { url: data.result.thumbnail }, caption }).then(() => {
+                    kagura.sendMessage(m.chat, { audio: { url: data.result.link }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
                 })
             })
             break
