@@ -1808,31 +1808,31 @@ break
             })
             break
         case 'playstore':
-            if (args.length == 0) return reply(`Example: ${prefix + command} telegram`)
-            var { data } = await axios.get(`https://api.lolhuman.xyz/api/playstore?apikey=ThadzBotZ&query=${full_args}`)
-            var text = 'Play Store Search : \n'
+            if (!text) throw `Example : ${prefix + command} pubg`
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/playstore?apikey=ThadzBotZ&query=${text}`)
+            var pst = 'Play Store Search : \n'
             for (var x of data.result) {
-                text += `Name : ${x.title}\n`
-                text += `ID : ${x.appId}\n`
-                text += `Developer : ${x.developer}\n`
-                text += `Link : ${x.url}\n`
-                text += `Price : ${x.priceText}\n`
-                text += `Price : ${x.price}\n\n`
+                pst += `Name : ${x.title}\n`
+                pst += `ID : ${x.appId}\n`
+                pst += `Developer : ${x.developer}\n`
+                pst += `Link : ${x.url}\n`
+                pst += `Price : ${x.priceText}\n`
+                pst += `Price : ${x.price}\n\n`
             }
-            reply(text)
+            reply(pst)
             break
         case 'shopee':
-            if (args.length == 0) return reply(`Example: ${prefix + command} tas gendong`)
-            var { data } = await axios.get(`https://api.lolhuman.xyz/api/shopee?apikey=ThadzBotZ&query=${full_args}`)
-            var text = 'Shopee Search : \n'
+            if (!text) throw `Example : ${prefix + command} kaos distro`
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/shopee?apikey=ThadzBotZ&query=${text}`)
+            var shop = 'Shopee Search : \n'
             for (var x of data.result) {
-                text += `Name : ${x.name}\n`
-                text += `Terjual : ${x.sold}\n`
-                text += `Stock : ${x.stock}\n`
-                text += `Lokasi : ${x.shop_loc}\n`
-                text += `Link : ${x.link_produk}\n\n`
+                shop += `Name : ${x.name}\n`
+                shop += `Terjual : ${x.sold}\n`
+                shop += `Stock : ${x.stock}\n`
+                shop += `Lokasi : ${x.shop_loc}\n`
+                shop += `Link : ${x.link_produk}\n\n`
             }
-            reply(text)
+            reply(shop)
             break
         case 'google':
             if (!text) throw `Example : ${prefix + command} boyolali jawa tengah`
