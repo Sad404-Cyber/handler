@@ -2539,9 +2539,17 @@ break
             case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
-                let msg = await kagura.sendImage(m.chat, anu.result.img, `⭔ Title : ${anu.result.lagu}\n⭔ Album : ${anu.result.album}\n⭔ Singer : ${anu.result.penyanyi}\n⭔ Publish : ${anu.result.publish}\n⭔ Lirik :\n${anu.result.lirik.result}`, m)
-                kagura.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
+                axios.get(`https://api.lolhuman.xyz/api/jooxplay?apikey=ThadzBotZ&query=${text}`).then(({ data }) => {
+                var caption = `Title : ${data.result.info.song}\n`
+                caption += `Artists : ${data.result.info.singer}\n`
+                caption += `Duration : ${data.result.info.duration}\n`
+                caption += `Album : ${data.result.info.album}\n`
+                caption += `Uploaded : ${data.result.info.date}\n`
+                caption += `Lirik :\n ${data.result.lirik}\n`
+                kagura.sendMessage(from, { image: { url: data.result.image }, caption }).then(() => {
+                    kagura.sendMessage(from, { audio: { url: data.result.audio[0].link }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
+                })
+            })
             }
             break
             case 'soundcloud': case 'scdl': {
