@@ -2626,8 +2626,9 @@ case 'zippyshare':
 	        case 'pindl': case 'pinterestdl': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
-                kagura.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: m })
+                axios.get(`https://api.lolhuman.xyz/api/pinterestdl?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                kagura.sendMessage(from, { image: { url: data.result[0] } })
+            })
             }
             break
             case 'umma': case 'ummadl': {
