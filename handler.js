@@ -3566,8 +3566,8 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
                                 }  
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'List Menu',
-                                    id: 'fiturlist'
+                                    displayText: 'Harga Sewa Bot',
+                                    id: 'sewabot'
                                 }
                             }]
                          let setbot = db.data.settings[botNumber]
