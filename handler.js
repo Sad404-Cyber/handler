@@ -2593,24 +2593,6 @@ break
             })
             }
             break
-            case 'twittermp3': case 'twitteraudio': {
-                if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `twitter ${text}`, buttonText: {displayText: '► Video'}, type: 1}
-                ]
-                let buttonMessage = {
-		    image: { url: anu.result.thumb },
-                    caption: util.format(anu.result),
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 4
-                }
-                let msg = await kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
-                kagura.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
-            }
-            break
 	        case 'fbdl': case 'fb': case 'facebook': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
