@@ -2588,18 +2588,9 @@ break
 	        case 'twitdl': case 'twitter': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '► Audio'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.HD || anu.result.SD },
-                    caption: util.format(anu.result),
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 5
-                }
-                kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+                axios.get(`https://api.lolhuman.xyz/api/twitter?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                kagura.sendMessage(m.chat, { video: { url: data.result.link[data.result.link.length - 1].link }, mimetype: 'video/mp4' })
+            })
             }
             break
             case 'twittermp3': case 'twitteraudio': {
