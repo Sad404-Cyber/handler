@@ -2541,7 +2541,6 @@ break
                 kagura.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
             }
             break
-           
             case 'soundcloud': case 'scdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
