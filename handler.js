@@ -2458,11 +2458,11 @@ break
 // Other
         case 'ssweb':
             if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
-            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/ssweb?apikey=${apikey}&url=${args[0]}` } })
+            sock.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/ssweb?apikey=${apikey}&url=${args[0]}` } })
             break
         case 'ssweb2':
             if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
-            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/sswebfull?apikey=${apikey}&url=${args[0]}` } })
+            sock.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/sswebfull?apikey=${apikey}&url=${args[0]}` } })
             break
         case 'shortlink':
             if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
@@ -2480,7 +2480,7 @@ break
                 caption += `Followers : ${data.result.followers}\n`
                 caption += `Following : ${data.result.following}\n`
                 caption += `Bio : ${data.result.bio}`
-                kagura.sendMessage(from, { image: { url: data.result.photo_profile }, caption })
+                kagura.sendMessage(m.chat, { image: { url: data.result.photo_profile }, caption })
             })
             break
         case 'stalkgithub':
@@ -2493,7 +2493,7 @@ break
                 caption += `Followers : ${data.result.followers}\n`
                 caption += `Following : ${data.result.following}\n`
                 caption += `Bio : ${data.result.bio}`
-                kagura.sendMessage(from, { image: { url: data.result.avatar }, caption })
+                kagura.sendMessage(m.chat, { image: { url: data.result.avatar }, caption })
             })
             break
         case 'stalktwitter':
@@ -2507,7 +2507,7 @@ break
                 caption += `Following : ${data.result.following}\n`
                 caption += `Like : ${data.result.like}\n`
                 caption += `Description : ${data.result.description}`
-                kagura.sendMessage(from, { image: { url: data.result.profile_picture }, caption })
+                kagura.sendMessage(m.chat, { image: { url: data.result.profile_picture }, caption })
             })
             break
         case 'stalktiktok':
@@ -2520,7 +2520,7 @@ break
                 caption += `Likes : ${data.result.likes}\n`
                 caption += `Video : ${data.result.video}\n`
                 caption += `Bio : ${data.result.bio}\n`
-                kagura.sendMessage(from, { image: { url: data.result.user_picture }, caption })
+                kagura.sendMessage(m.chat, { image: { url: data.result.user_picture }, caption })
             })
             break
 	        case 'tiktok': case 'tiktoknowm': {
@@ -2592,8 +2592,8 @@ break
                 caption += `Album : ${data.result.info.album}\n`
                 caption += `Uploaded : ${data.result.info.date}\n`
                 caption += `Lirik :\n ${data.result.lirik}\n`
-                kagura.sendMessage(from, { image: { url: data.result.image }, caption }).then(() => {
-                    kagura.sendMessage(from, { audio: { url: data.result.audio[0].link }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
+                kagura.sendMessage(m.chat, { image: { url: data.result.image }, caption }).then(() => {
+                    kagura.sendMessage(m.chat, { audio: { url: data.result.audio[0].link }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
                 })
             })
             }
@@ -2626,7 +2626,7 @@ break
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 axios.get(`https://api.lolhuman.xyz/api/facebook?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
-                kagura.sendMessage(from, { video: { url: data.result }, mimetype: 'video/mp4' })
+                kagura.sendMessage(m.chat, { video: { url: data.result }, mimetype: 'video/mp4' })
             })
             }
             break
@@ -2644,7 +2644,7 @@ case 'zippyshare':
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 axios.get(`https://api.lolhuman.xyz/api/pinterestdl?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
-                kagura.sendMessage(from, { image: { url: data.result[0] } })
+                kagura.sendMessage(m.chat, { image: { url: data.result[0] } })
             })
             }
             break
