@@ -2569,7 +2569,7 @@ break
             })
             }
             break
-            case 'soundcloud': case 'scdl': {
+            case 'sportify': case 'sprtfy': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
                 axios.get(`https://api.lolhuman.xyz/api/spotify?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
