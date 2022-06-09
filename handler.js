@@ -2613,6 +2613,16 @@ break
             })
             }
             break
+case 'zippyshare':
+            if (!text) throw 'Masukkan Query Link!'
+            axios.get(`https://api.lolhuman.xyz/api/zippyshare?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                var text = `File Name : ${data.result.name_file}\n`
+                text += `Size : ${data.result.size}\n`
+                text += `Date Upload : ${data.result.date_upload}\n`
+                text += `Download Url : ${data.result.download_url}`
+                reply(text)
+            })
+            break
 	        case 'pindl': case 'pinterestdl': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
