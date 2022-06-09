@@ -3320,7 +3320,6 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #ssweb2 [query]
 • #shortlink [query]
 
-
  ❏ *Random Menu*
 • #art
 • #bts
