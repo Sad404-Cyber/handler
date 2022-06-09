@@ -2457,7 +2457,7 @@ break
             break
 	    // Stalk
         case 'stalkig':
-            if (args.length == 0) return reply(`Example: ${prefix + command} jessnolimit`)
+            if (!text) throw `Example : ${prefix + command} hafidzabdillh_`
             axios.get(`https://api.lolhuman.xyz/api/stalkig/${text}?apikey=sayajiro`).then(({ data }) => {
                 var caption = `Username : ${data.result.username}\n`
                 caption += `Full Name : ${data.result.fullname}\n`
@@ -2469,7 +2469,7 @@ break
             })
             break
         case 'stalkgithub':
-            if (args.length == 0) return reply(`Example: ${prefix + command} LoL-Human`)
+            if (!text) throw `Example : ${prefix + command} Sad404-Cyber`
             axios.get(`https://api.lolhuman.xyz/api/github/${args[0]}?apikey=${apikey}`).then(({ data }) => {
                 var caption = `Name : ${data.result.name}\n`
                 caption += `Link : ${data.result.url}\n`
@@ -2482,7 +2482,7 @@ break
             })
             break
         case 'stalktwitter':
-            if (args.length == 0) return reply(`Example: ${prefix + command} jokowi`)
+            if (!text) throw `Example : ${prefix + command} jokowi`
             axios.get(`https://api.lolhuman.xyz/api/twitter/${args[0]}?apikey=${apikey}`).then(({ data }) => {
                 var caption = `Username : ${data.result.screen_name}\n`
                 caption += `Name : ${data.result.name}\n`
@@ -2496,7 +2496,7 @@ break
             })
             break
         case 'stalktiktok':
-            if (args.length == 0) return reply(`Example: ${prefix + command} bulansutena`)
+            if (!text) throw `Example : ${prefix + command} bulansutena`
             axios.get(`https://api.lolhuman.xyz/api/stalktiktok/${args[0]}?apikey=${apikey}`).then(({ data }) => {
                 var caption = `Username : ${data.result.username}\n`
                 caption += `Nickname : ${data.result.nickname}\n`
