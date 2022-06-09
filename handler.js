@@ -3497,7 +3497,11 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 
  ❏ *Convert Menu*
 • #attp
+•#attp2
 • #ttp
+•#ttp2
+•#ttp3
+•#ttp4
 • #toimage
 • #removebg
 • #sticker
