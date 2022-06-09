@@ -1890,7 +1890,7 @@ break
                 .catch(console.error)
             }
             break
-            case 'ytmp4':
+            case 'ytmp4': {
             if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27`
             axios
                 .get(`https://api.lolhuman.xyz/api/ytvideo2?apikey=ThadzBotZ&url=${args[0]}`)
@@ -1903,6 +1903,7 @@ break
                     })
                 })
                 .catch(console.error)
+                }
             break
 	    case 'getmusic': {
                 let { yta } = require('./lib/y2mate')
