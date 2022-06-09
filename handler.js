@@ -55,7 +55,7 @@ module.exports = kagura = async (kagura, m, chatUpdate, store) => {
         const mime = (quoted.msg || quoted).mimetype || ''
         const isMedia = /image|video|sticker|audio/.test(mime)
         const reply = async (text) => {
-        return kagura.sendMessage(from, { text: text.trim() }, { quoted: m })
+        return kagura.sendMessage(m.chat, { text: text.trim() }, { quoted: m })
     }
 	
         // Group
@@ -1794,20 +1794,20 @@ break
             if (command === 'wallpapersearch') {
                 command = 'wallpaper'
             }
-            kagura.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&query=${text}` } })
+            kagura.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&query=${text}` } })
             break
         case 'gimage2':
             if (!text) throw `Example : ${prefix + command} loli kawai`
             axios.get(`https://api.lolhuman.xyz/api/gimage2?apikey=ThadzBotZ&query=${text}`).then(({ data }) => {
                 for (var x of data.result.slice(0, 5)) {
-                    kagura.sendMessage(from, { image: { url: x } })
+                    kagura.sendMessage(m.chat, { image: { url: x } })
                 }
             })
             break
         case 'wallpapersearch2':
             if (!text) throw `Example : ${prefix + command} story wa anime`
             axios.get(`https://api.lolhuman.xyz/api/wallpaper2?apikey=ThadzBotZ&query=${text}`).then(({ data }) => {
-                kagura.sendMessage(from, { image: { url: data.result } })
+                kagura.sendMessage(m.chat, { image: { url: data.result } })
             })
             break
         case 'playstore':
@@ -1901,8 +1901,8 @@ break
                 	if (data.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(data))
                     var caption = `❖ Title    : *${data.result.title}*\n`
                     caption += `❖ Size     : *${data.result.size}*`
-                    kagura.sendMessage(from, { image: { url: data.result.thumbnail }, caption }).then(() => {
-                        kagura.sendMessage(from, { audio: { url: data.result.link }, mimetype: 'video/mp4', fileName: `${data.result.title}.mp4` })
+                    kagura.sendMessage(m.chat, { image: { url: data.result.thumbnail }, caption }).then(() => {
+                        kagura.sendMessage(m.chat, { audio: { url: data.result.link }, mimetype: 'video/mp4', fileName: `${data.result.title}.mp4` })
                     })
                 })
                 .catch(console.error)
@@ -1958,7 +1958,7 @@ break
         case 'megumin':
         case 'wallnime':
         case 'quotesimage':
-            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=ThadzBotZ` } })
+            sock.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=ThadzBotZ` } })
             break
 
         case 'chiisaihentai':
@@ -2493,7 +2493,7 @@ break
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
-                kagura.sendMessage(from, { video: { url: data.result.link }, mimetype: 'video/mp4' })
+                kagura.sendMessage(m.chat, { video: { url: data.result.link }, mimetype: 'video/mp4' })
             })
             }
             break
@@ -2501,7 +2501,7 @@ break
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
               axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
-                kagura.sendMessage(from, { video: { url: data }, mimetype: 'video/mp4' })
+                kagura.sendMessage(m.chat, { video: { url: data }, mimetype: 'video/mp4' })
             })
             }
             break
@@ -2529,9 +2529,9 @@ break
                 axios.get(`https://api.lolhuman.xyz/api/instagram?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
                 var url = data.result
                 if (url.includes('.mp4')) {
-                    kagura.sendMessage(from, { video: { url }, mimetype: 'video/mp4' })
+                    kagura.sendMessage(m.chat, { video: { url }, mimetype: 'video/mp4' })
                 } else {
-                    kagura.sendMessage(from, { image: { url } })
+                    kagura.sendMessage(m.chat, { image: { url } })
                 }
             })
             }
