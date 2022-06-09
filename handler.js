@@ -2553,6 +2553,18 @@ break
             })
             }
             break
+  case 'igdl2':
+            if (!text) throw 'No Query Url!'
+            axios.get(`https://api.lolhuman.xyz/api/instagram2?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                for (var x of data.result) {
+                    if (x.includes('.mp4')) {
+                        kagura.sendMessage(m.chat, { video: { url: x }, mimetype: 'video/mp4' })
+                    } else {
+                        kagura.sendMessage(m.chat, { image: { url: x } })
+                    }
+                }
+            })
+            break
             case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
