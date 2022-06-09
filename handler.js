@@ -3309,6 +3309,12 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #wikimedia [query]
 • #ytsearch [query]
 
+ ❏ *Stalking Menu*
+• #stalkig [query]
+• #stalktiktok [query]
+• #stalktwitter [query]
+• #stalkgithub [query]
+
  ❏ *Random Menu*
 • #art
 • #bts
