@@ -652,23 +652,38 @@ m.reply(`  ❏ *Search Menu*
 break
 case 'mn7': {
 m.reply(`  ❏ *Random Menu*
- • #coffe
- • #quotesanime
- • #motivasi
- • #dilanquote
- • #bucinquote
- • #katasenja
- • #puisi
- • #couple
- • #anime
- • #waifu
- • #husbu
- • #neko
- • #shinobu
- • #waifus (nsfw)
- • #nekos (nsfw)
- • #trap (nsfw)
- • #blowjob (nsfw)`)
+ • #art
+• #bts
+• #exo
+• #elf
+• #loli
+• #neko
+• #waifu
+• #shota
+• #husbu
+• #sagiri
+• #shinobu
+• #megumin
+• #wallnime
+• #chiisaihentai
+• #trap
+• #blowjob
+• #yaoi
+• #ecchi
+• #hentai
+• #ahegao
+• #hololewd
+• #sideoppai
+• #animefeets
+• #animebooty
+• #animethighss
+• #hentaiparadise
+• #animearmpits
+• #hentaifemdom
+• #lewdanimegirls
+• #biganimetiddies
+• #animebellybutton
+• #hentai4everyone
 }
 break
 case 'mn8': {
