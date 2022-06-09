@@ -2572,9 +2572,17 @@ break
             case 'soundcloud': case 'scdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
-                let msg = await kagura.sendImage(m.chat, anu.result.thumb, `⭔ Title : ${anu.result.title}\n⭔ Url : ${isUrl(text)[0]}`)
-                kagura.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
+                axios.get(`https://api.lolhuman.xyz/api/spotify?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                var caption = `Title : ${data.result.title}\n`
+                caption += `Artists : ${data.result.artists}\n`
+                caption += `Duration : ${data.result.duration}\n`
+                caption += `Popularity : ${data.result.popularity}\n`
+                caption += `Preview : ${data.result.preview_url}\n`
+                kagura.sendMessage(from, { image: { url: data.result.thumbnail }, caption }).then(() => {
+                    kagura.sendMessage(from, { audio: { url: data.result.link }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
+                })
+            })
+            break
             }
             break
 	        case 'twitdl': case 'twitter': {
