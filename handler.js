@@ -683,6 +683,8 @@ m.reply(`  ❏ *Random Menu*
 • #lewdanimegirls
 • #biganimetiddies
 • #animebellybutton
+• #quotesanime
+• #quotesimage
 • #hentai4everyone
 }
 break
