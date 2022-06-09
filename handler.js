@@ -1835,8 +1835,8 @@ break
             reply(text)
             break
         case 'google':
-            if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
-            var { data } = await axios.get(`https://api.lolhuman.xyz/api/gsearch?apikey=ThadzBotZ&query=${full_args}`)
+            if (!text) throw `Example : ${prefix + command} boyolali jawa tengah`
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/gsearch?apikey=ThadzBotZ&query=${text}`)
             var text = 'Google Search : \n'
             for (var x of data.result) {
                 text += `Title : ${x.title}\n`
