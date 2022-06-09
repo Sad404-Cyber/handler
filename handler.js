@@ -1652,7 +1652,7 @@ break
 	    break
 	       case 'attp': case 'ttp': case 'attp2': case 'ttp2': case 'ttp3': case 'ttp4': {
            if (!text) throw `Example : ${prefix + command} text`
-           await kagura.sendMedia(m.chat, `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&text=${text}`, 'kagura', 'morou', m, {asSticker: true}
+           await kagura.sendMedia(m.chat, `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&text=${text}`, 'kagura', 'morou', m, {asSticker: true})
          }
          break
 	       case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
