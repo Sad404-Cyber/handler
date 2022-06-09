@@ -1837,13 +1837,13 @@ break
         case 'google':
             if (!text) throw `Example : ${prefix + command} boyolali jawa tengah`
             var { data } = await axios.get(`https://api.lolhuman.xyz/api/gsearch?apikey=ThadzBotZ&query=${text}`)
-            var text = 'Google Search : \n'
+            var gog = 'Google Search : \n'
             for (var x of data.result) {
-                text += `Title : ${x.title}\n`
-                text += `Link : ${x.link}\n`
-                text += `Desc : ${x.desc}\n\n`
+                gog += `Title : ${x.title}\n`
+                gog += `Link : ${x.link}\n`
+                gog += `Desc : ${x.desc}\n\n`
             }
-            reply(text)
+            reply(gog)
             break
 
 	    case 'play': case 'ytplay': {
