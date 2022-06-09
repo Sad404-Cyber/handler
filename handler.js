@@ -3308,8 +3308,6 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #wallpaper [query]
 • #wikimedia [query]
 • #ytsearch [query]
-• #ringtone [query]
-• #stalk [option] [query]
 
  ❏ *Random Menu*
 • #art
