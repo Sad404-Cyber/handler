@@ -3376,6 +3376,8 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #lewdanimegirls
 • #biganimetiddies
 • #animebellybutton
+• #quotesanime
+• #quotesimage
 • #hentai4everyone
 
  ❏ *Text Pro Menu*
