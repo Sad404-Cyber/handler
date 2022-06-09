@@ -1787,17 +1787,17 @@ break
         case 'gimage':
         case 'konachan':
         case 'wallpapersearch':
-            if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
+            if (!text) throw `Example : ${prefix + command} loli kawai`
             if (command === 'wallpapersearch') {
                 command = 'wallpaper'
             }
-            sock.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&query=${full_args}` } })
+            kagura.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&query=${text}` } })
             break
         case 'gimage2':
-            if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
-            axios.get(`https://api.lolhuman.xyz/api/gimage2?apikey=ThadzBotZ&query=${full_args}`).then(({ data }) => {
+            if (!text) throw `Example : ${prefix + command} loli kawai`
+            axios.get(`https://api.lolhuman.xyz/api/gimage2?apikey=ThadzBotZ&query=${text}`).then(({ data }) => {
                 for (var x of data.result.slice(0, 5)) {
-                    sock.sendMessage(from, { image: { url: x } })
+                    kagura.sendMessage(from, { image: { url: x } })
                 }
             })
             break
