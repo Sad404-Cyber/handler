@@ -633,7 +633,7 @@ m.reply(`  ❏ *Downloader Menu*
  • #getvideo [query]
  • #umma [url]
  • #joox [query]
- • #soundcloud [url]`)
+ • #sportify [url]`)
 }
 break
 case 'mn6': {
