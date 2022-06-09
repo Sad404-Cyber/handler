@@ -2608,8 +2608,9 @@ break
 	        case 'fbdl': case 'fb': case 'facebook': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
-                kagura.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `⭔ Title : ${anu.result.title}`}, { quoted: m })
+                axios.get(`https://api.lolhuman.xyz/api/facebook?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                sock.sendMessage(from, { video: { url: data.result }, mimetype: 'video/mp4' })
+            })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
