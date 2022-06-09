@@ -3294,7 +3294,6 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 • #pinterestdl [url]
 • #ytmp3 [url]
 • #ytmp4 [url]
-• #umma [url]
 • #joox [query]
 • #sportify [url]
 
