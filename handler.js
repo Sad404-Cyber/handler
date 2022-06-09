@@ -39,7 +39,7 @@ module.exports = kagura = async (kagura, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
-        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
+        var prefix = prefa ? /^[°▸π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°▸π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
@@ -223,7 +223,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = kuismath[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await m.reply(`🎮 Kuis Matematika  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim • #math mode`)
+                await m.reply(`🎮 Kuis Matematika  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ▸ #math mode`)
                 delete kuismath[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -499,7 +499,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             state: 'WAITING'
             }
             if (text) room.name = text
-            m.reply('Menunggu partner' + (text ? ` mengetik command dibawah ini • #${command} ${text}` : ''))
+            m.reply('Menunggu partner' + (text ? ` mengetik command dibawah ini ▸ #${command} ${text}` : ''))
             this.game[room.id] = room
             }
             }
@@ -525,7 +525,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             let timeout = 60000
             if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) m.reply(`Selesaikan suit mu yang sebelumnya`)
 	    if (m.mentionedJid[0] === m.sender) return m.reply(`Tidak bisa bermain dengan diri sendiri !`)
-            if (!m.mentionedJid[0]) return m.reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nContoh : • #suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
+            if (!m.mentionedJid[0]) return m.reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nContoh : ▸ #suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
             if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) throw `Orang yang kamu tantang sedang bermain suit bersama orang lain :(`
             let id = 'suit_' + new Date() * 1
             let caption = `_*SUIT PvP*_
@@ -553,354 +553,354 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             
 case 'mn1': {
 m.reply(` ❏ *Group Menu*
- • #linkgroup
- • #ephemeral [option]
- • #setppgc [image]
- • #setname [text]
- • #setdesc [text]
- • #group [option]
- • #editinfo [option]
- • #add @user
- • #kick @user
- • #hidetag [text]
- • #tagall [text]
- • #antilink [on/off]
- • #mute [on/off]
- • #promote @user
- • #demote @user
- • #vote [text]
- • #devote
- • #upvote
- • #cekvote
- • #hapusvote`)
+ ▸ #linkgroup
+ ▸ #ephemeral [option]
+ ▸ #setppgc [image]
+ ▸ #setname [text]
+ ▸ #setdesc [text]
+ ▸ #group [option]
+ ▸ #editinfo [option]
+ ▸ #add @user
+ ▸ #kick @user
+ ▸ #hidetag [text]
+ ▸ #tagall [text]
+ ▸ #antilink [on/off]
+ ▸ #mute [on/off]
+ ▸ #promote @user
+ ▸ #demote @user
+ ▸ #vote [text]
+ ▸ #devote
+ ▸ #upvote
+ ▸ #cekvote
+ ▸ #hapusvote`)
 }
 break
 case 'mn2': {
 m.reply(`  ❏ *Main Menu*
- • #ping
- • #owner
- • #menu
- • #help
- • #delete
- • #infochat
- • #quoted
- • #listpc
- • #listgc
- • #listonline
- • #speedtest`)
+ ▸ #ping
+ ▸ #owner
+ ▸ #menu
+ ▸ #help
+ ▸ #delete
+ ▸ #infochat
+ ▸ #quoted
+ ▸ #listpc
+ ▸ #listgc
+ ▸ #listonline
+ ▸ #speedtest`)
 }
 break
 case 'mn3': {
 m.reply(`  ❏ *Owner Menu*
- • #react [emoji]
- • #chat [option]
- • #join [link]
- • #leave
- • #block @user
- • #unblock @user
- • #bcgroup [text]
- • #bcall [text]
- • #setppbot [image]
- • #setexif
- • #setmenu [option]`)
+ ▸ #react [emoji]
+ ▸ #chat [option]
+ ▸ #join [link]
+ ▸ #leave
+ ▸ #block @user
+ ▸ #unblock @user
+ ▸ #bcgroup [text]
+ ▸ #bcall [text]
+ ▸ #setppbot [image]
+ ▸ #setexif
+ ▸ #setmenu [option]`)
 }
 break
 case 'mn4': {
 m.reply(`  ❏ *Webzone Menu*
- • #playstore
- • #gsmarena
- • #jadwalbioskop
- • #nowplayingbioskop
- • #aminio
- • #wattpad
- • #webtoons
- • #drakor`)
+ ▸ #playstore
+ ▸ #gsmarena
+ ▸ #jadwalbioskop
+ ▸ #nowplayingbioskop
+ ▸ #aminio
+ ▸ #wattpad
+ ▸ #webtoons
+ ▸ #drakor`)
 }
 break
 case 'mn5': {
 m.reply(`  ❏ *Downloader Menu*
- • #tiktoknowm [url]
- • #tiktokwm [url]
- • #tiktokmp3 [url]
- • #instagram [url]
- • #instagram2 [url]
- • #twitter [url]
- • #facebook [url]
- • #pinterestdl [url]
- • #ytmp3 [url]
- • #ytmp4 [url]
- • #getmusic [query]
- • #getvideo [query]
- • #umma [url]
- • #joox [query]
- • #sportify [url]`)
+ ▸ #tiktoknowm [url]
+ ▸ #tiktokwm [url]
+ ▸ #tiktokmp3 [url]
+ ▸ #instagram [url]
+ ▸ #instagram2 [url]
+ ▸ #twitter [url]
+ ▸ #facebook [url]
+ ▸ #pinterestdl [url]
+ ▸ #ytmp3 [url]
+ ▸ #ytmp4 [url]
+ ▸ #getmusic [query]
+ ▸ #getvideo [query]
+ ▸ #umma [url]
+ ▸ #joox [query]
+ ▸ #sportify [url]`)
 }
 break
 case 'mn6': {
 m.reply(`  ❏ *Search Menu*
- • #play [query]
- • #yts [query]
- • #google [query]
- • #gimage [query]
- • #pinterest [query]
- • #wallpaper [query]
- • #wikimedia [query]
- • #ytsearch [query]
- • #ringtone [query]
- • #stalk [option] [query]`)
+ ▸ #play [query]
+ ▸ #yts [query]
+ ▸ #google [query]
+ ▸ #gimage [query]
+ ▸ #pinterest [query]
+ ▸ #wallpaper [query]
+ ▸ #wikimedia [query]
+ ▸ #ytsearch [query]
+ ▸ #ringtone [query]
+ ▸ #stalk [option] [query]`)
 }
 break
 case 'mn7': {
 m.reply(`  ❏ *Random Menu*
- • #art
-• #bts
-• #exo
-• #elf
-• #loli
-• #neko
-• #waifu
-• #shota
-• #husbu
-• #sagiri
-• #shinobu
-• #megumin
-• #wallnime
-• #chiisaihentai
-• #trap
-• #blowjob
-• #yaoi
-• #ecchi
-• #hentai
-• #ahegao
-• #hololewd
-• #sideoppai
-• #animefeets
-• #animebooty
-• #animethighss
-• #hentaiparadise
-• #animearmpits
-• #hentaifemdom
-• #lewdanimegirls
-• #biganimetiddies
-• #animebellybutton
-• #quotesanime
-• #quotesimage
-• #hentai4everyone`)
+ ▸ #art
+▸ #bts
+▸ #exo
+▸ #elf
+▸ #loli
+▸ #neko
+▸ #waifu
+▸ #shota
+▸ #husbu
+▸ #sagiri
+▸ #shinobu
+▸ #megumin
+▸ #wallnime
+▸ #chiisaihentai
+▸ #trap
+▸ #blowjob
+▸ #yaoi
+▸ #ecchi
+▸ #hentai
+▸ #ahegao
+▸ #hololewd
+▸ #sideoppai
+▸ #animefeets
+▸ #animebooty
+▸ #animethighss
+▸ #hentaiparadise
+▸ #animearmpits
+▸ #hentaifemdom
+▸ #lewdanimegirls
+▸ #biganimetiddies
+▸ #animebellybutton
+▸ #quotesanime
+▸ #quotesimage
+▸ #hentai4everyone`)
 }
 break
 case 'mn8': {
 m.reply(`  ❏ *Text Pro Menu*
-• #blackpink
-• #neon
-• #greenneon
-• #advanceglow
-• #futureneon
-• #sandwriting
-• #sandsummer
-• #sandengraved
-• #metaldark
-• #neonlight
-• #holographic
-• #text1917
-• #minion
-• #deluxesilver
-• #newyearcard
-• #bloodfrosted
-• #halloween
-• #jokerlogo
-• #fireworksparkle
-• #natureleaves
-• #bokeh
-• #toxic
-• #strawberry
-• #box3d
-• #roadwarning
-• #breakwall
-• #icecold
-• #luxury
-• #cloud
-• #summersand
-• #horrorblood
-• #thunder`)
+▸ #blackpink
+▸ #neon
+▸ #greenneon
+▸ #advanceglow
+▸ #futureneon
+▸ #sandwriting
+▸ #sandsummer
+▸ #sandengraved
+▸ #metaldark
+▸ #neonlight
+▸ #holographic
+▸ #text1917
+▸ #minion
+▸ #deluxesilver
+▸ #newyearcard
+▸ #bloodfrosted
+▸ #halloween
+▸ #jokerlogo
+▸ #fireworksparkle
+▸ #natureleaves
+▸ #bokeh
+▸ #toxic
+▸ #strawberry
+▸ #box3d
+▸ #roadwarning
+▸ #breakwall
+▸ #icecold
+▸ #luxury
+▸ #cloud
+▸ #summersand
+▸ #horrorblood
+▸ #thunder`)
 }
 break
 case 'mn9': {
 m.reply(`  ❏ *Photo Oxy Menu*
- • #shadow
-• #cup
-• #cup1
-• #romance
-• #smoke
-• #burnpaper
-• #lovemessage
-• #undergrass
-• #love
-• #coffe
-• #woodheart
-• #woodenboard
-• #summer3d
-• #wolfmetal
-• #nature3d
-• #underwater
-• #golderrose
-• #summernature
-• #letterleaves
-• #glowingneon
-• #fallleaves
-• #flamming
-• #harrypotter
-• #carvedwood`)
+ ▸ #shadow
+▸ #cup
+▸ #cup1
+▸ #romance
+▸ #smoke
+▸ #burnpaper
+▸ #lovemessage
+▸ #undergrass
+▸ #love
+▸ #coffe
+▸ #woodheart
+▸ #woodenboard
+▸ #summer3d
+▸ #wolfmetal
+▸ #nature3d
+▸ #underwater
+▸ #golderrose
+▸ #summernature
+▸ #letterleaves
+▸ #glowingneon
+▸ #fallleaves
+▸ #flamming
+▸ #harrypotter
+▸ #carvedwood`)
 }
 break
 case 'mn10': {
 m.reply(`  ❏ *Ephoto Menu*
-• #wetglass
-• #multicolor3d
-• #watercolor
-• #luxurygold
-• #galaxywallpaper
-• #lighttext
-• #beautifulflower
-• #puppycute
-• #royaltext
-• #heartshaped
-• #birthdaycake
-• #galaxystyle
-• #hologram3d
-• #greenneon
-• #glossychrome
-• #greenbush
-• #metallogo
-• #noeltext
-• #glittergold
-• #textcake
-• #starsnight
-• #wooden3d
-• #textbyname
-• #writegalacy
-• #galaxybat
-• #snow3d
-• #birthdayday
-• #goldplaybutton
-• #silverplaybutton
-• #freefire`)
+▸ #wetglass
+▸ #multicolor3d
+▸ #watercolor
+▸ #luxurygold
+▸ #galaxywallpaper
+▸ #lighttext
+▸ #beautifulflower
+▸ #puppycute
+▸ #royaltext
+▸ #heartshaped
+▸ #birthdaycake
+▸ #galaxystyle
+▸ #hologram3d
+▸ #greenneon
+▸ #glossychrome
+▸ #greenbush
+▸ #metallogo
+▸ #noeltext
+▸ #glittergold
+▸ #textcake
+▸ #starsnight
+▸ #wooden3d
+▸ #textbyname
+▸ #writegalacy
+▸ #galaxybat
+▸ #snow3d
+▸ #birthdayday
+▸ #goldplaybutton
+▸ #silverplaybutton
+▸ #freefire`)
 }
 break
 case 'mn11': {
 m.reply(`  ❏ *Fun Menu*
- • #simih
- • #halah
- • #hilih
- • #huluh
- • #heleh
- • #holoh
- • #jadian
- • #jodohku
- • #delttt
- • #tictactoe
- • #family100
- • #tebak [option]
- • #math [mode]
- • #suitpvp [@tag]`)
+ ▸ #simih
+ ▸ #halah
+ ▸ #hilih
+ ▸ #huluh
+ ▸ #heleh
+ ▸ #holoh
+ ▸ #jadian
+ ▸ #jodohku
+ ▸ #delttt
+ ▸ #tictactoe
+ ▸ #family100
+ ▸ #tebak [option]
+ ▸ #math [mode]
+ ▸ #suitpvp [@tag]`)
 }
 break
 case 'mn12': {
 m.reply(`  ❏ *Primbon Menu*
- • #nomorhoki
- • #artimimpi
- • #artinama
- • #ramaljodoh
- • #ramaljodohbali
- • #suamiistri
- • #ramalcinta
- • #cocoknama
- • #pasangan
- • #jadiannikah
- • #sifatusaha
- • #rezeki
- • #pekerjaan
- • #nasib
- • #penyakit
- • #tarot
- • #fengshui
- • #haribaik
- • #harisangar
- • #harisial
- • #nagahari
- • #arahrezeki
- • #peruntungan
- • #weton
- • #karakter
- • #keberuntungan
- • #memancing
- • #masasubur
- • #zodiak
- • #shio`)
+ ▸ #nomorhoki
+ ▸ #artimimpi
+ ▸ #artinama
+ ▸ #ramaljodoh
+ ▸ #ramaljodohbali
+ ▸ #suamiistri
+ ▸ #ramalcinta
+ ▸ #cocoknama
+ ▸ #pasangan
+ ▸ #jadiannikah
+ ▸ #sifatusaha
+ ▸ #rezeki
+ ▸ #pekerjaan
+ ▸ #nasib
+ ▸ #penyakit
+ ▸ #tarot
+ ▸ #fengshui
+ ▸ #haribaik
+ ▸ #harisangar
+ ▸ #harisial
+ ▸ #nagahari
+ ▸ #arahrezeki
+ ▸ #peruntungan
+ ▸ #weton
+ ▸ #karakter
+ ▸ #keberuntungan
+ ▸ #memancing
+ ▸ #masasubur
+ ▸ #zodiak
+ ▸ #shio`)
 }
 break
 case 'mn13': {
 m.reply(`  ❏ *Convert Menu*
- • #attp
- • #ttp
- • #toimage
- • #removebg
- • #sticker
- • #emojimix
- • #emojimix2
- • #tovideo
- • #togif
- • #tourl
- • #tovn
- • #tomp3
- • #toaudio
- • #ebinary
- • #dbinary
- • #styletext
- • #smeme`)
+ ▸ #attp
+ ▸ #ttp
+ ▸ #toimage
+ ▸ #removebg
+ ▸ #sticker
+ ▸ #emojimix
+ ▸ #emojimix2
+ ▸ #tovideo
+ ▸ #togif
+ ▸ #tourl
+ ▸ #tovn
+ ▸ #tomp3
+ ▸ #toaudio
+ ▸ #ebinary
+ ▸ #dbinary
+ ▸ #styletext
+ ▸ #smeme`)
 }
 break
 case 'mn14': {
 m.reply(`  ❏ *Database Menu*
- • #setcmd
- • #listcmd
- • #delcmd
- • #lockcmd
- • #addmsg
- • #listmsg
- • #getmsg
- • #delmsg`)
+ ▸ #setcmd
+ ▸ #listcmd
+ ▸ #delcmd
+ ▸ #lockcmd
+ ▸ #addmsg
+ ▸ #listmsg
+ ▸ #getmsg
+ ▸ #delmsg`)
 }
 break
 case 'mn15': {
 m.reply(`  ❏ *Anonymous Menu*
- • #anonymous
- • #start
- • #next
- • #keluar`)
+ ▸ #anonymous
+ ▸ #start
+ ▸ #next
+ ▸ #keluar`)
 }
 break
 case 'mn16': {
 m.reply(`  ❏ *Islamic Menu*
- • #iqra
- • #hadist
- • #alquran
- • #juzamma
- • #tafsirsurah`)
+ ▸ #iqra
+ ▸ #hadist
+ ▸ #alquran
+ ▸ #juzamma
+ ▸ #tafsirsurah`)
 }
 break
 case 'mn17': {
 m.reply(`  ❏ *Voice Changer*
- • #bass
- • #blown
- • #deep
- • #earrape
- • #fast
- • #fat
- • #nightcore
- • #reverse
- • #robot
- • #slow
- • #tupai`)
+ ▸ #bass
+ ▸ #blown
+ ▸ #deep
+ ▸ #earrape
+ ▸ #fast
+ ▸ #fat
+ ▸ #nightcore
+ ▸ #reverse
+ ▸ #robot
+ ▸ #slow
+ ▸ #tupai`)
 }
 break
             case 'chat': {
@@ -1035,7 +1035,7 @@ break
             case 'kuismath': case 'math': {
                 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                 let { genMath, modes } = require('./src/math')
-                if (!text) throw `Mode: ${Object.keys(modes).join(' | ')}\nContoh penggunaan: • #math medium`
+                if (!text) throw `Mode: ${Object.keys(modes).join(' | ')}\nContoh penggunaan: ▸ #math medium`
                 let result = await genMath(text.toLowerCase())
                 kagura.sendText(m.chat, `*Berapa hasil dari: ${result.soal.toLowerCase()}*?\n\nWaktu: ${(result.waktu / 1000).toFixed(2)} detik`, m).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
@@ -1227,9 +1227,9 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
 	    break
                case 'vote': {
             if (!m.isGroup) throw mess.group
-            if (m.chat in vote) throw `_Masih ada vote di chat ini!_\n\n*• #hapusvote* - untuk menghapus vote`
+            if (m.chat in vote) throw `_Masih ada vote di chat ini!_\n\n*▸ #hapusvote* - untuk menghapus vote`
             if (!text) throw `Masukkan Alasan Melakukan Vote, Example: *${prefix + command} Owner Ganteng*`
-            m.reply(`Vote dimulai!\n\n*• #upvote* - untuk ya\n*• #devote* - untuk tidak\n*• #cekvote* - untuk mengecek vote\n*• #hapusvote* - untuk menghapus vote`)
+            m.reply(`Vote dimulai!\n\n*▸ #upvote* - untuk ya\n*▸ #devote* - untuk tidak\n*▸ #cekvote* - untuk mengecek vote\n*▸ #hapusvote* - untuk menghapus vote`)
             vote[m.chat] = [q, [], []]
             await sleep(1000)
             upvote = vote[m.chat][1]
@@ -1252,10 +1252,10 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
 │ 
 └────
 
-*• #hapusvote* - untuk menghapus vote`
+*▸ #hapusvote* - untuk menghapus vote`
 let buttonsVote = [
-  {buttonId: `• #upvote`, buttonText: {displayText: '𝚄𝙿𝚅𝙾𝚃𝙴'}, type: 1},
-  {buttonId: `• #devote`, buttonText: {displayText: '𝙳𝙴𝚅𝙾𝚃𝙴'}, type: 1}
+  {buttonId: `▸ #upvote`, buttonText: {displayText: '𝚄𝙿𝚅𝙾𝚃𝙴'}, type: 1},
+  {buttonId: `▸ #devote`, buttonText: {displayText: '𝙳𝙴𝚅𝙾𝚃𝙴'}, type: 1}
 ]
 
             let buttonMessageVote = {
@@ -1269,7 +1269,7 @@ let buttonsVote = [
             break
                case 'upvote': {
             if (!m.isGroup) throw mess.group
-            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*• #vote* - untuk memulai vote`
+            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*▸ #vote* - untuk memulai vote`
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
             if (wasVote) throw 'Kamu Sudah Vote'
@@ -1293,10 +1293,10 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-*• #hapusvote* - untuk menghapus vote`
+*▸ #hapusvote* - untuk menghapus vote`
             let buttonsUpvote = [
-              {buttonId: `• #upvote`, buttonText: {displayText: '𝚄𝙿𝚅𝙾𝚃𝙴'}, type: 1},
-              {buttonId: `• #devote`, buttonText: {displayText: '𝙳𝙴𝚅𝙾𝚃𝙴'}, type: 1}
+              {buttonId: `▸ #upvote`, buttonText: {displayText: '𝚄𝙿𝚅𝙾𝚃𝙴'}, type: 1},
+              {buttonId: `▸ #devote`, buttonText: {displayText: '𝙳𝙴𝚅𝙾𝚃𝙴'}, type: 1}
             ]
 
             let buttonMessageUpvote = {
@@ -1311,7 +1311,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
              break
                 case 'devote': {
             if (!m.isGroup) throw mess.group
-            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*• #vote* - untuk memulai vote`
+            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*▸ #vote* - untuk memulai vote`
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
             if (wasVote) throw 'Kamu Sudah Vote'
@@ -1335,10 +1335,10 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-*• #hapusvote* - untuk menghapus vote`
+*▸ #hapusvote* - untuk menghapus vote`
             let buttonsDevote = [
-              {buttonId: `• #upvote`, buttonText: {displayText: '𝚄𝙿𝚅𝙾𝚃𝙴'}, type: 1},
-              {buttonId: `• #devote`, buttonText: {displayText: '𝙳𝙴𝚅𝙾𝚃𝙴'}, type: 1}
+              {buttonId: `▸ #upvote`, buttonText: {displayText: '𝚄𝙿𝚅𝙾𝚃𝙴'}, type: 1},
+              {buttonId: `▸ #devote`, buttonText: {displayText: '𝙳𝙴𝚅𝙾𝚃𝙴'}, type: 1}
             ]
 
             let buttonMessageDevote = {
@@ -1354,7 +1354,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                  
 case 'cekvote':
 if (!m.isGroup) throw mess.group
-if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*• #vote* - untuk memulai vote`
+if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*▸ #vote* - untuk memulai vote`
 teks_vote = `*「 VOTE 」*
 
 *Alasan:* ${vote[m.chat][0]}
@@ -1373,7 +1373,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-*• #hapusvote* - untuk menghapus vote
+*▸ #hapusvote* - untuk menghapus vote
 
 
 ©${kagura.user.id}
@@ -1382,7 +1382,7 @@ kagura.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
             if (!m.isGroup) throw mess.group
-            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*• #vote* - untuk memulai vote`
+            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*▸ #vote* - untuk memulai vote`
             delete vote[m.chat]
             m.reply('Berhasil Menghapus Sesi Vote Di Grup Ini')
 	    }
@@ -2820,13 +2820,13 @@ ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index +
                 msgs[text.toLowerCase()] = quoted.fakeObj
 m.reply(`Berhasil menambahkan pesan di list pesan sebagai '${text}'
     
-Akses dengan • #getmsg ${text}
+Akses dengan ▸ #getmsg ${text}
 
-Lihat list Pesan Dengan • #listmsg`)
+Lihat list Pesan Dengan ▸ #listmsg`)
             }
             break
             case 'getmsg': {
-                if (!text) throw `Example : ${prefix + command} file name\n\nLihat list pesan dengan • #listmsg`
+                if (!text) throw `Example : ${prefix + command} file name\n\nLihat list pesan dengan ▸ #listmsg`
                 let msgs = global.db.data.database
                 if (!(text.toLowerCase() in msgs)) throw `'${text}' tidak terdaftar di list pesan`
                 kagura.copyNForward(m.chat, msgs[text.toLowerCase()], true)
@@ -3230,11 +3230,11 @@ case 'fiturlist': {
             }
             break
             case 'list': case 'menu': case 'help': case '?': {
-                anu = `Selamat ${salam} ${pushname} 👋
-Saya *${botname}*, Bot Ini Adalah Beta Multi-Device WhatsApp.
-Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
+                anu = `Selamat ${salam} Member ${pushname} ❤️
+Aku Adalah *${botname}*, Aku Adalah Bot Beta Multi-Device WhatsApp.
+Jika Ada Kesalahan Atau Bug Padaku Silahkan Lapor Ownerku Yaa!!
 ──────────────
-  _> *INFO BOT*_
+  *⌞ BOT INFO ⌝*
 👑 Creator : *Hafidz Abdillah*
 👤 Owner : *${ownername}*
 🤖 Bot Name : *${botname}*
@@ -3243,332 +3243,332 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 🗒 ️Prefix : *Multi Prefix*
 ──────────────
  ❏ *Group Menu*
-• #linkgroup
-• #ephemeral [option]
-• #setppgc [image]
-• #setname [text]
-• #setdesc [text]
-• #group [option]
-• #editinfo [option]
-• #add @user
-• #kick @user
-• #hidetag [text]
-• #tagall [text]
-• #antilink [on/off]
-• #mute [on/off]
-• #promote @user
-• #demote @user
-• #vote [text]
-• #devote
-• #upvote
-• #cekvote
-• #hapusvote
+▸ #linkgroup
+▸ #ephemeral [option]
+▸ #setppgc [image]
+▸ #setname [text]
+▸ #setdesc [text]
+▸ #group [option]
+▸ #editinfo [option]
+▸ #add @user
+▸ #kick @user
+▸ #hidetag [text]
+▸ #tagall [text]
+▸ #antilink [on/off]
+▸ #mute [on/off]
+▸ #promote @user
+▸ #demote @user
+▸ #vote [text]
+▸ #devote
+▸ #upvote
+▸ #cekvote
+▸ #hapusvote
  
  ❏ *Main Menu*
-• #ping
-• #owner
-• #menu
-• #help
-• #delete
-• #infochat
-• #quoted
-• #listpc
-• #listgc
-• #listonline
-• #speedtest
+▸ #ping
+▸ #owner
+▸ #menu
+▸ #help
+▸ #delete
+▸ #infochat
+▸ #quoted
+▸ #listpc
+▸ #listgc
+▸ #listonline
+▸ #speedtest
  
  ❏ *Owner Menu*
-• #react [emoji]
-• #chat [option]
-• #join [link]
-• #leave
-• #block @user
-• #unblock @user
-• #bcgroup [text]
-• #bcall [text]
-• #setppbot [image]
-• #setexif
-• #setmenu [option]
+▸ #react [emoji]
+▸ #chat [option]
+▸ #join [link]
+▸ #leave
+▸ #block @user
+▸ #unblock @user
+▸ #bcgroup [text]
+▸ #bcall [text]
+▸ #setppbot [image]
+▸ #setexif
+▸ #setmenu [option]
 
  ❏ *Webzone Menu*
-• #playstore
-• #gsmarena
-• #jadwalbioskop
-• #nowplayingbioskop
-• #aminio
-• #wattpad
-• #webtoons
-• #drakor
+▸ #playstore
+▸ #gsmarena
+▸ #jadwalbioskop
+▸ #nowplayingbioskop
+▸ #aminio
+▸ #wattpad
+▸ #webtoons
+▸ #drakor
 
  ❏ *Downloader Menu*
-• #tiktoknowm [url]
-• #tiktokwm [url]
-• #tiktokmp3 [url]
-• #instagram [url]
-• #instagram2 [url]
-• #twitter [url]
-• #facebook [url]
-• #pinterestdl [url]
-• #ytmp3 [url]
-• #ytmp4 [url]
-• #joox [query]
-• #sportify [url]
+▸ #tiktoknowm [url]
+▸ #tiktokwm [url]
+▸ #tiktokmp3 [url]
+▸ #instagram [url]
+▸ #instagram2 [url]
+▸ #twitter [url]
+▸ #facebook [url]
+▸ #pinterestdl [url]
+▸ #ytmp3 [url]
+▸ #ytmp4 [url]
+▸ #joox [query]
+▸ #sportify [url]
 
  ❏ *Search Menu*
-• #play [query]
-• #yts [query]
-• #google [query]
-• #gimage [query]
-• #pinterest [query]
-• #wallpaper [query]
-• #wikimedia [query]
-• #ytsearch [query]
+▸ #play [query]
+▸ #yts [query]
+▸ #google [query]
+▸ #gimage [query]
+▸ #pinterest [query]
+▸ #wallpaper [query]
+▸ #wikimedia [query]
+▸ #ytsearch [query]
 
  ❏ *Stalking Menu*
-• #stalkig [query]
-• #stalktiktok [query]
-• #stalktwitter [query]
-• #stalkgithub [query]
+▸ #stalkig [query]
+▸ #stalktiktok [query]
+▸ #stalktwitter [query]
+▸ #stalkgithub [query]
 
  ❏ *Other Menu*
-• #ssweb [query]
-• #ssweb2 [query]
-• #shortlink [query]
+▸ #ssweb [query]
+▸ #ssweb2 [query]
+▸ #shortlink [query]
 
  ❏ *Random Menu*
-• #art
-• #bts
-• #exo
-• #elf
-• #loli
-• #neko
-• #waifu
-• #shota
-• #husbu
-• #sagiri
-• #shinobu
-• #megumin
-• #wallnime
-• #chiisaihentai
-• #trap
-• #blowjob
-• #yaoi
-• #ecchi
-• #hentai
-• #ahegao
-• #hololewd
-• #sideoppai
-• #animefeets
-• #animebooty
-• #animethighss
-• #hentaiparadise
-• #animearmpits
-• #hentaifemdom
-• #lewdanimegirls
-• #biganimetiddies
-• #animebellybutton
-• #quotesanime
-• #quotesimage
-• #hentai4everyone
+▸ #art
+▸ #bts
+▸ #exo
+▸ #elf
+▸ #loli
+▸ #neko
+▸ #waifu
+▸ #shota
+▸ #husbu
+▸ #sagiri
+▸ #shinobu
+▸ #megumin
+▸ #wallnime
+▸ #chiisaihentai
+▸ #trap
+▸ #blowjob
+▸ #yaoi
+▸ #ecchi
+▸ #hentai
+▸ #ahegao
+▸ #hololewd
+▸ #sideoppai
+▸ #animefeets
+▸ #animebooty
+▸ #animethighss
+▸ #hentaiparadise
+▸ #animearmpits
+▸ #hentaifemdom
+▸ #lewdanimegirls
+▸ #biganimetiddies
+▸ #animebellybutton
+▸ #quotesanime
+▸ #quotesimage
+▸ #hentai4everyone
 
  ❏ *Text Pro Menu*
-• #blackpink
-• #neon
-• #greenneon
-• #advanceglow
-• #futureneon
-• #sandwriting
-• #sandsummer
-• #sandengraved
-• #metaldark
-• #neonlight
-• #holographic
-• #text1917
-• #minion
-• #deluxesilver
-• #newyearcard
-• #bloodfrosted
-• #halloween
-• #jokerlogo
-• #fireworksparkle
-• #natureleaves
-• #bokeh
-• #toxic
-• #strawberry
-• #box3d
-• #roadwarning
-• #breakwall
-• #icecold
-• #luxury
-• #cloud
-• #summersand
-• #horrorblood
-• #thunder
+▸ #blackpink
+▸ #neon
+▸ #greenneon
+▸ #advanceglow
+▸ #futureneon
+▸ #sandwriting
+▸ #sandsummer
+▸ #sandengraved
+▸ #metaldark
+▸ #neonlight
+▸ #holographic
+▸ #text1917
+▸ #minion
+▸ #deluxesilver
+▸ #newyearcard
+▸ #bloodfrosted
+▸ #halloween
+▸ #jokerlogo
+▸ #fireworksparkle
+▸ #natureleaves
+▸ #bokeh
+▸ #toxic
+▸ #strawberry
+▸ #box3d
+▸ #roadwarning
+▸ #breakwall
+▸ #icecold
+▸ #luxury
+▸ #cloud
+▸ #summersand
+▸ #horrorblood
+▸ #thunder
 
  ❏ *Photo Oxy Menu*
-• #shadow
-• #cup
-• #cup1
-• #romance
-• #smoke
-• #burnpaper
-• #lovemessage
-• #undergrass
-• #love
-• #coffe
-• #woodheart
-• #woodenboard
-• #summer3d
-• #wolfmetal
-• #nature3d
-• #underwater
-• #golderrose
-• #summernature
-• #letterleaves
-• #glowingneon
-• #fallleaves
-• #flamming
-• #harrypotter
-• #carvedwood
+▸ #shadow
+▸ #cup
+▸ #cup1
+▸ #romance
+▸ #smoke
+▸ #burnpaper
+▸ #lovemessage
+▸ #undergrass
+▸ #love
+▸ #coffe
+▸ #woodheart
+▸ #woodenboard
+▸ #summer3d
+▸ #wolfmetal
+▸ #nature3d
+▸ #underwater
+▸ #golderrose
+▸ #summernature
+▸ #letterleaves
+▸ #glowingneon
+▸ #fallleaves
+▸ #flamming
+▸ #harrypotter
+▸ #carvedwood
 
  ❏ *Ephoto Menu*
-• #wetglass
-• #multicolor3d
-• #watercolor
-• #luxurygold
-• #galaxywallpaper
-• #lighttext
-• #beautifulflower
-• #puppycute
-• #royaltext
-• #heartshaped
-• #birthdaycake
-• #galaxystyle
-• #hologram3d
-• #greenneon
-• #glossychrome
-• #greenbush
-• #metallogo
-• #noeltext
-• #glittergold
-• #textcake
-• #starsnight
-• #wooden3d
-• #textbyname
-• #writegalacy
-• #galaxybat
-• #snow3d
-• #birthdayday
-• #goldplaybutton
-• #silverplaybutton
-• #freefire
+▸ #wetglass
+▸ #multicolor3d
+▸ #watercolor
+▸ #luxurygold
+▸ #galaxywallpaper
+▸ #lighttext
+▸ #beautifulflower
+▸ #puppycute
+▸ #royaltext
+▸ #heartshaped
+▸ #birthdaycake
+▸ #galaxystyle
+▸ #hologram3d
+▸ #greenneon
+▸ #glossychrome
+▸ #greenbush
+▸ #metallogo
+▸ #noeltext
+▸ #glittergold
+▸ #textcake
+▸ #starsnight
+▸ #wooden3d
+▸ #textbyname
+▸ #writegalacy
+▸ #galaxybat
+▸ #snow3d
+▸ #birthdayday
+▸ #goldplaybutton
+▸ #silverplaybutton
+▸ #freefire
 
  ❏ *Fun Menu*
-• #simih
-• #halah
-• #hilih
-• #huluh
-• #heleh
-• #holoh
-• #jadian
-• #jodohku
-• #delttt
-• #tictactoe
-• #family100
-• #tebak [option]
-• #math [mode]
-• #suitpvp [@tag]
+▸ #simih
+▸ #halah
+▸ #hilih
+▸ #huluh
+▸ #heleh
+▸ #holoh
+▸ #jadian
+▸ #jodohku
+▸ #delttt
+▸ #tictactoe
+▸ #family100
+▸ #tebak [option]
+▸ #math [mode]
+▸ #suitpvp [@tag]
 
  ❏ *Primbon Menu*
-• #nomorhoki
-• #artimimpi
-• #artinama
-• #ramaljodoh
-• #ramaljodohbali
-• #suamiistri
-• #ramalcinta
-• #cocoknama
-• #pasangan
-• #jadiannikah
-• #sifatusaha
-• #rezeki
-• #pekerjaan
-• #nasib
-• #penyakit
-• #tarot
-• #fengshui
-• #haribaik
-• #harisangar
-• #harisial
-• #nagahari
-• #arahrezeki
-• #peruntungan
-• #weton
-• #karakter
-• #keberuntungan
-• #memancing
-• #masasubur
-• #zodiak
-• #shio
+▸ #nomorhoki
+▸ #artimimpi
+▸ #artinama
+▸ #ramaljodoh
+▸ #ramaljodohbali
+▸ #suamiistri
+▸ #ramalcinta
+▸ #cocoknama
+▸ #pasangan
+▸ #jadiannikah
+▸ #sifatusaha
+▸ #rezeki
+▸ #pekerjaan
+▸ #nasib
+▸ #penyakit
+▸ #tarot
+▸ #fengshui
+▸ #haribaik
+▸ #harisangar
+▸ #harisial
+▸ #nagahari
+▸ #arahrezeki
+▸ #peruntungan
+▸ #weton
+▸ #karakter
+▸ #keberuntungan
+▸ #memancing
+▸ #masasubur
+▸ #zodiak
+▸ #shio
 
  ❏ *Convert Menu*
-• #attp
-•#attp2
-• #ttp
-•#ttp2
-•#ttp3
-•#ttp4
-• #toimage
-• #removebg
-• #sticker
-• #emojimix
-• #emojimix2
-• #tovideo
-• #togif
-• #tourl
-• #tovn
-• #tomp3
-• #toaudio
-• #ebinary
-• #dbinary
-• #styletext
-• #smeme
+▸ #attp
+▸#attp2
+▸ #ttp
+▸#ttp2
+▸#ttp3
+▸#ttp4
+▸ #toimage
+▸ #removebg
+▸ #sticker
+▸ #emojimix
+▸ #emojimix2
+▸ #tovideo
+▸ #togif
+▸ #tourl
+▸ #tovn
+▸ #tomp3
+▸ #toaudio
+▸ #ebinary
+▸ #dbinary
+▸ #styletext
+▸ #smeme
 
  ❏ *Database Menu*
-• #setcmd
-• #listcmd
-• #delcmd
-• #lockcmd
-• #addmsg
-• #listmsg
-• #getmsg
-• #delmsg
+▸ #setcmd
+▸ #listcmd
+▸ #delcmd
+▸ #lockcmd
+▸ #addmsg
+▸ #listmsg
+▸ #getmsg
+▸ #delmsg
 
  ❏ *Anonymous Menu*
-• #anonymous
-• #start
-• #next
-• #keluar
+▸ #anonymous
+▸ #start
+▸ #next
+▸ #keluar
 
  ❏ *Islamic Menu*
-• #iqra
-• #hadist
-• #alquran
-• #juzamma
-• #tafsirsurah
+▸ #iqra
+▸ #hadist
+▸ #alquran
+▸ #juzamma
+▸ #tafsirsurah
 
  ❏ *Voice Changer*
-• #bass
-• #blown
-• #deep
-• #earrape
-• #fast
-• #fat
-• #nightcore
-• #reverse
-• #robot
-• #slow
-• #tupai
+▸ #bass
+▸ #blown
+▸ #deep
+▸ #earrape
+▸ #fast
+▸ #fat
+▸ #nightcore
+▸ #reverse
+▸ #robot
+▸ #slow
+▸ #tupai
 `
                 let btn = [{
                                 urlButton: {
