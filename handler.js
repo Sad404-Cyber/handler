@@ -2223,8 +2223,9 @@ case 'chord': case 'chordlagu': {
         })
     })
 }
-                if (anu.status == false) return m.reply(anu.message)
-                kagura.sendText(m.chat, `⭔ *Chord* ${anu.message.chords}`, m)
+                anu = await chord(text)
+                hasil = anu.result
+                kagura.sendMessage(m.chat, `Chord: ${hasil}, { quoted: m })
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
