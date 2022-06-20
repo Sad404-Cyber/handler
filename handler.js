@@ -2225,7 +2225,7 @@ case 'chord': case 'chordlagu': {
 }
                 anu = await chord(text)
                 hasil = anu.result
-                kagura.sendMessage(m.chat, `Chord: ${hasil}, { quoted: m })
+                kagura.sendMessage(m.chat, `Chord: ${hasil}`, { quoted: m })
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
