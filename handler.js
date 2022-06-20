@@ -2200,34 +2200,6 @@ break
                 kagura.sendText(m.chat, `⭔ *Nomor HP :* ${anu.message.nomer_hp}\n⭔ *Angka Shuzi :* ${anu.message.angka_shuzi}\n⭔ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n⭔ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
             }
             break
-case 'chord': case 'chordlagu': {
-                if (!text) throw `Example : ${prefix + command} teteg ati`
-                function chord(query){
-    return new Promise(async (resolve, reject) => {
-        axios.get('https://www.gitagram.com/chord-gitar/depan?do=search&q=' + query).then(({
-            data
-        }) => {
-            const $$ = cheerio.load(data)
-            plink = $$('#dokuwiki__content > div.typo.position-relative > div.search_fulltextresult > dl > div:nth-child(1) > dt > a').attr('href')
-            if (plink == undefined) resolve('Chord tidak ditemukan!')
-            axios.get(plink).then(({
-                data
-            }) => {
-                const $ = cheerio.load(data)
-                result = $('#dokuwiki__content').find('h3.sectionedit1').text()
-                $('#dokuwiki__content').each(function(a, b) {
-                    chords += $(b).find('div.song-with-chords').text().replace(/#/g, '')
-                })
-                resolve(result)
-            })
-        })
-    })
-}
-                anu = await chord(text)
-                hasil = anu.result
-                kagura.sendMessage(m.chat, `Chord: ${hasil}`, { quoted: m })
-            }
-            break
             case 'artimimpi': case 'tafsirmimpi': {
                 if (!text) throw `Example : ${prefix + command} belanja`
                 let anu = await primbon.tafsir_mimpi(text)
