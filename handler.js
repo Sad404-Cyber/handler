@@ -2202,7 +2202,27 @@ break
             break
 case 'chord': case 'chordlagu': {
                 if (!text) throw `Example : ${prefix + command} teteg ati`
-                let anu = await zxy.search.chord(text)
+                function chord = async (query) => {
+    return new Promise(async (resolve, reject) => {
+        axios.get('https://www.gitagram.com/chord-gitar/depan?do=search&q=' + query).then(({
+            data
+        }) => {
+            const $$ = cheerio.load(data)
+            plink = $$('#dokuwiki__content > div.typo.position-relative > div.search_fulltextresult > dl > div:nth-child(1) > dt > a').attr('href')
+            if (plink == undefined) resolve('Chord tidak ditemukan!')
+            axios.get(plink).then(({
+                data
+            }) => {
+                const $ = cheerio.load(data)
+                result = $('#dokuwiki__content').find('h3.sectionedit1').text()
+                $('#dokuwiki__content').each(function(a, b) {
+                    chords += $(b).find('div.song-with-chords').text().replace(/#/g, '')
+                })
+                resolve(result)
+            })
+        })
+    })
+}
                 if (anu.status == false) return m.reply(anu.message)
                 kagura.sendText(m.chat, `⭔ *Chord* ${anu.message.chords}`, m)
             }
