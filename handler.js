@@ -2202,7 +2202,7 @@ break
             break
 case 'chord': case 'chordlagu': {
                 if (!text) throw `Example : ${prefix + command} teteg ati`
-                function chord = async (query) => {
+                function chord(query) => {
     return new Promise(async (resolve, reject) => {
         axios.get('https://www.gitagram.com/chord-gitar/depan?do=search&q=' + query).then(({
             data
