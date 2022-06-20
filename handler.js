@@ -2202,7 +2202,7 @@ break
             break
 case 'chord':
             if (!text) throw `Example : ${prefix + command} teteg ati`
-            axios.get(`https://api.lolhuman.xyz/api/chord?apikey=${apikey}&query=${text}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/chord?apikey=sayajiro&query=${text}`).then(({ data }) => {
                 var caption = `Title : ${data.result.title}\n`
                 caption += `Chord : ${data.result.chord}\n`
                 kagura.sendText(m.chat, `${caption}`, m)
@@ -2467,15 +2467,15 @@ case 'chord':
 // Other
         case 'ssweb':
             if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
-            sock.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/ssweb?apikey=${apikey}&url=${args[0]}` } })
+            sock.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/ssweb?apikey=sayajiro&url=${args[0]}` } })
             break
         case 'ssweb2':
             if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
-            sock.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/sswebfull?apikey=${apikey}&url=${args[0]}` } })
+            sock.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/sswebfull?apikey=sayajiro&url=${args[0]}` } })
             break
         case 'shortlink':
             if (args.length == 0) return reply(`Example: ${prefix + command} https://api.lolhuman.xyz`)
-            axios.get(`https://api.lolhuman.xyz/api/ouoshortlink?apikey=${apikey}&url=${args[0]}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/ouoshortlink?apikey=sayajiro&url=${args[0]}`).then(({ data }) => {
                 reply(data.result)
             })
             break
@@ -2494,7 +2494,7 @@ case 'chord':
             break
         case 'stalkgithub':
             if (!text) throw `Example : ${prefix + command} Sad404-Cyber`
-            axios.get(`https://api.lolhuman.xyz/api/github/${args[0]}?apikey=${apikey}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/github/${args[0]}?apikey=sayajiro`).then(({ data }) => {
                 var caption = `Name : ${data.result.name}\n`
                 caption += `Link : ${data.result.url}\n`
                 caption += `Public Repo : ${data.result.public_repos}\n`
@@ -2507,7 +2507,7 @@ case 'chord':
             break
         case 'stalktwitter':
             if (!text) throw `Example : ${prefix + command} jokowi`
-            axios.get(`https://api.lolhuman.xyz/api/twitter/${args[0]}?apikey=${apikey}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/twitter/${args[0]}?apikey=sayajiro`).then(({ data }) => {
                 var caption = `Username : ${data.result.screen_name}\n`
                 caption += `Name : ${data.result.name}\n`
                 caption += `Tweet : ${data.result.tweet}\n`
@@ -2521,7 +2521,7 @@ case 'chord':
             break
         case 'stalktiktok':
             if (!text) throw `Example : ${prefix + command} bulansutena`
-            axios.get(`https://api.lolhuman.xyz/api/stalktiktok/${args[0]}?apikey=${apikey}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/stalktiktok/${args[0]}?apikey=sayajiro`).then(({ data }) => {
                 var caption = `Username : ${data.result.username}\n`
                 caption += `Nickname : ${data.result.nickname}\n`
                 caption += `Followers : ${data.result.followers}\n`
