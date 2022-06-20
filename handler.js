@@ -2551,19 +2551,7 @@ case 'chord':
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
-                ]
-                let buttonMessage = {
-                    text: `Download From ${text}`,
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 2
-                }
-                let msg = await kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
-                kagura.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
+                kagura.sendMessage(from, { audio: { url: `https://api.lolhuman.xyz/api/tiktokmusic?apikey=sayajiro&url=${text}` }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
