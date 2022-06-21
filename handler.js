@@ -3041,7 +3041,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 let anu = await kagura.chats.all()
                 kagura.setMaxListeners(25)
 					for (let _ of anu) {
-						rmln.deleteChat(_.jid)
+						kagura.deleteChat(_.jid)
 					}
 					m.reply('sukses')
             }
