@@ -3038,10 +3038,10 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 kagura.sendContact(m.chat, global.owner, m)
             }
             case 'clear': case 'clearall': {
-                let anu = await kagura.chats.all()
+                let anu = await db.data.chats()
                 kagura.setMaxListeners(25)
 					for (let _ of anu) {
-						kagura.deleteChat(_.jid)
+						kagura.deletechats(_.jid)
 					}
 					m.reply('sukses')
             }
