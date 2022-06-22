@@ -3645,6 +3645,15 @@ case 'addlist':
                     m.reply(`Sukses set list message dengan key : *${args1}*`)
                 }
                 break
+case prefix + 'dellist':
+			if (!m.isGroup) throw mess.group
+                if (!isAdmins) throw mess.admin 
+                if (db_respon_list.length === 0) return reply(`Belum ada list message di database`)
+                if (!q) return m.reply(`Gunakan dengan cara ${command} *key*\n\n_Contoh_\n\n${command} hello`)
+                if (!isAlreadyResponList(from, q, db_respon_list)) return m.reply(`List respon dengan key *${q}* tidak ada di database!`)
+                delResponList(from, q, db_respon_list)
+                m.reply(`Sukses delete list message dengan key *${q}*`)
+                break
             default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
