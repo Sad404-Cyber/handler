@@ -3671,7 +3671,30 @@ case prefix + 'dellist':
                         m.reply(String(e))
                     }
                 }
-
+case prefix + 'list':
+			if (!m.isGroup) throw mess.group
+                if (db_respon_list.length === 0) return m.reply(`Belum ada list message di database`)
+                if (!isAlreadyResponListGroup(from, db_respon_list)) return m.reply(`Belum ada list message yang terdaftar di group ini`)
+                var arr_rows = [];
+                for (let x of db_respon_list) {
+                    if (x.id === from) {
+                        arr_rows.push({
+                            title: x.key,
+                            rowId: x.key
+                        })
+                    }
+                }
+                var listMsg = {
+                    footerText: `Hai`,
+                    buttonText: 'Click Me!',
+                    description: 'Silahkan Pilih Produk Nya',
+                    sections: [{
+                        title: groupName, rows: arr_rows
+                    }],
+                    listType: 1
+                }
+                kagura.sendMessage(from, listMsg, MessageType.listMessage)
+                break
                 if (budy.startsWith('>')) {
                     if (!isCreator) return m.reply(mess.owner)
                     try {
