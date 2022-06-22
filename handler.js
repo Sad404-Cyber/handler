@@ -78,6 +78,15 @@ module.exports = kagura = async (kagura, m, db_respon_list, chatUpdate, store, q
     	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
     	const isPremium = isCreator || global.premium.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
 	
+	const isImage = (type === 'imageMessage')
+        const isVideo = (type === 'videoMessage')
+        const isSticker = (type == 'stickerMessage')
+        const isMedia = isImage || isVideo || isSticker || (type == 'audioMessage') || (type == 'documentMessage')
+        const isQuotedImage = isQuotedMsg ? (quotedMsg.type === 'imageMessage') ? true : false : false
+        const isQuotedVideo = isQuotedMsg ? (quotedMsg.type === 'videoMessage') ? true : false : false
+        const isQuotedSticker = isQuotedMsg ? (quotedMsg.type === 'stickerMessage') ? true : false : false
+        const isButton = (type == 'buttonsResponseMessage') ? msg.message.buttonsResponseMessage.selectedButtonId : ''
+        const isListMessage = (type == 'listResponseMessage') ? msg.message.listResponseMessage.title : ''
 	
 	try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
