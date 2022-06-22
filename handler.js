@@ -85,8 +85,8 @@ module.exports = kagura = async (kagura, m, db_respon_list, chatUpdate, store, q
         const isQuotedImage = isQuotedMsg ? (quotedMsg.type === 'imageMessage') ? true : false : false
         const isQuotedVideo = isQuotedMsg ? (quotedMsg.type === 'videoMessage') ? true : false : false
         const isQuotedSticker = isQuotedMsg ? (quotedMsg.type === 'stickerMessage') ? true : false : false
-        const isButton = (type == 'buttonsResponseMessage') ? msg.message.buttonsResponseMessage.selectedButtonId : ''
-        const isListMessage = (type == 'listResponseMessage') ? msg.message.listResponseMessage.title : ''
+        const isButton = (type == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : ''
+        const isListMessage = (type == 'listResponseMessage') ? m.message.listResponseMessage.title : ''
 	
 	try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
