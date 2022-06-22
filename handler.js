@@ -81,7 +81,6 @@ module.exports = kagura = async (kagura, m, db_respon_list, chatUpdate, store, q
 	const isImage = (type === 'imageMessage')
         const isVideo = (type === 'videoMessage')
         const isSticker = (type == 'stickerMessage')
-        const isMed = isImage || isVideo || isSticker || (type == 'audioMessage') || (type == 'documentMessage')
         const isQuotedImage = isQuotedMsg ? (quotedMsg.type === 'imageMessage') ? true : false : false
         const isQuotedVideo = isQuotedMsg ? (quotedMsg.type === 'videoMessage') ? true : false : false
         const isQuotedSticker = isQuotedMsg ? (quotedMsg.type === 'stickerMessage') ? true : false : false
