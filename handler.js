@@ -52,7 +52,6 @@ module.exports = kagura = async (kagura, m, chatUpdate, store, quotedMsg, isQuot
         var budy = (typeof m.text == 'string' ? m.text : '')
         var prefix = prefa ? /^[°▸π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°▸π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
         const isCmd = body.startsWith(prefix)
-        const q = chats.slice(command.length + 1, chats.length)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
@@ -62,7 +61,7 @@ module.exports = kagura = async (kagura, m, chatUpdate, store, quotedMsg, isQuot
         const botNumber = await kagura.decodeJid(kagura.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
-        const text = args.join(" ")
+        const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
         const isMedia = /image|video|sticker|audio/.test(mime)
