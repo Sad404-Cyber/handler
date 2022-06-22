@@ -3037,14 +3037,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             case 'owner': case 'creator': {
                 kagura.sendContact(m.chat, global.owner, m)
             }
-            case 'clear': case 'clearall': {
-                let anu = await db.data.chats()
-                kagura.setMaxListeners(25)
-					for (let _ of anu) {
-						kagura.deletechats(_.jid)
-					}
-					m.reply('sukses')
-            }
+            
             break
             case 'playstore': {
             if (!text) throw `Example : ${prefix + command} clash of clans`
