@@ -17,6 +17,7 @@ const path = require('path')
 const os = require('os')
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
+const FormData = require("form-data");
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
@@ -3625,8 +3626,8 @@ case 'addlist':
                 if (!q.includes("@")) return m.reply(`Gunakan dengan cara ${command} *key@response*\n\n_Contoh_\n\n${command} tes@apa`)
                 if (isAlreadyResponList(from, args1, db_respon_list)) return m.reply(`List respon dengan key : *${args1}* sudah ada di group ini.`)
                 if (isQuotedImage || isImage) {
-                    let encmedia = isQuotedImage ? JSON.parse(JSON.stringify(msg).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : msg
-                    let media = await baby.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
+                    let encmedia = isQuotedImage ? JSON.parse(JSON.stringify(m).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : m
+                    let media = await kagura.downloadAndSaveMediaMessage(encmedia, `./src/${sender}`)
                     const fd = new FormData();
 
                     fd.append('file', fs.readFileSync(media), '.tmp', '.jpg')
