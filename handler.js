@@ -22,6 +22,15 @@ const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins } = require('./lib/myfunc')
+const {
+    addResponList,
+    delResponList,
+    isAlreadyResponList,
+    isAlreadyResponListGroup,
+    sendResponList,
+    updateResponList,
+    getDataResponList
+} = require('./lib/respon-list');
 
 // read database
 let tebaklagu = db.data.game.tebaklagu = []
