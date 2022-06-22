@@ -3637,7 +3637,7 @@ case 'addlist':
                     }).then(res => res.json())
                         .then((json) => {
                             addResponList(from, args1, args2, true, `https://telegra.ph${json[0].src}`, db_respon_list)
-                            m reply(`Sukses set list message dengan key : *${args1}*`)
+                            m.reply(`Sukses set list message dengan key : *${args1}*`)
                             if (fs.existsSync(media)) fs.unlinkSync(media)
                         })
                 } else {
