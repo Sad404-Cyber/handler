@@ -51,6 +51,7 @@ module.exports = kagura = async (kagura, m, chatUpdate, store) => {
         var budy = (typeof m.text == 'string' ? m.text : '')
         var prefix = prefa ? /^[°▸π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°▸π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
         const isCmd = body.startsWith(prefix)
+        const q = chats.slice(command.length + 1, chats.length)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
@@ -3615,6 +3616,34 @@ Jika Ada Kesalahan Atau Bug Padaku Silahkan Lapor Ownerku Yaa!!
                         }
                      }
             break
+// ADD LIST
+case 'addlist':
+			if (!m.isGroup) throw mess.group
+                if (!isAdmins) throw mess.admin 
+                var args1 = q.split("@")[0]
+                var args2 = q.split("@")[1]                
+                if (!q.includes("@")) return reply(`Gunakan dengan cara ${command} *key@response*\n\n_Contoh_\n\n${command} tes@apa`)
+                if (isAlreadyResponList(from, args1, db_respon_list)) return reply(`List respon dengan key : *${args1}* sudah ada di group ini.`)
+                if (isQuotedImage || isImage) {
+                    let encmedia = isQuotedImage ? JSON.parse(JSON.stringify(msg).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : msg
+                    let media = await baby.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
+                    const fd = new FormData();
+
+                    fd.append('file', fs.readFileSync(media), '.tmp', '.jpg')
+                    fetch('https://telegra.ph/upload', {
+                        method: 'POST',
+                        body: fd
+                    }).then(res => res.json())
+                        .then((json) => {
+                            addResponList(from, args1, args2, true, `https://telegra.ph${json[0].src}`, db_respon_list)
+                            reply(`Sukses set list message dengan key : *${args1}*`)
+                            if (fs.existsSync(media)) fs.unlinkSync(media)
+                        })
+                } else {
+                    addResponList(from, args1, args2, false, '-', db_respon_list)
+                    reply(`Sukses set list message dengan key : *${args1}*`)
+                }
+                break
             default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
