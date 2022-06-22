@@ -1673,7 +1673,7 @@ break
 	    break
 	       case 'attp': case 'ttp': case 'attp2': case 'ttp2': case 'ttp3': case 'ttp4': {
            if (!text) throw `Example : ${prefix + command} text`
-           await kagura.sendMedia(m.chat, `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&text=${text}`, 'kagura', 'morou', m, {asSticker: true})
+           await kagura.sendMedia(m.chat, `https://api.lolhuman.xyz/api/${command}?apikey=sayajiro&text=${text}`, 'kagura', 'morou', m, {asSticker: true})
          }
          break
 	       case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
@@ -1812,11 +1812,11 @@ break
             if (command === 'wallpapersearch') {
                 command = 'wallpaper'
             }
-            kagura.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/${command}?apikey=ThadzBotZ&query=${text}` } })
+            kagura.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/${command}?apikey=sayajiro&query=${text}` } })
             break
         case 'gimage2':
             if (!text) throw `Example : ${prefix + command} loli kawai`
-            axios.get(`https://api.lolhuman.xyz/api/gimage2?apikey=ThadzBotZ&query=${text}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/gimage2?apikey=sayajiro&query=${text}`).then(({ data }) => {
                 for (var x of data.result.slice(0, 5)) {
                     kagura.sendMessage(m.chat, { image: { url: x } })
                 }
@@ -1824,13 +1824,13 @@ break
             break
         case 'wallpapersearch2':
             if (!text) throw `Example : ${prefix + command} story wa anime`
-            axios.get(`https://api.lolhuman.xyz/api/wallpaper2?apikey=ThadzBotZ&query=${text}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/wallpaper2?apikey=sayajiro&query=${text}`).then(({ data }) => {
                 kagura.sendMessage(m.chat, { image: { url: data.result } })
             })
             break
         case 'playstore':
             if (!text) throw `Example : ${prefix + command} pubg`
-            var { data } = await axios.get(`https://api.lolhuman.xyz/api/playstore?apikey=ThadzBotZ&query=${text}`)
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/playstore?apikey=sayajiro&query=${text}`)
             var pst = 'Play Store Search : \n'
             for (var x of data.result) {
                 pst += `Name : ${x.title}\n`
@@ -1844,7 +1844,7 @@ break
             break
         case 'shopee':
             if (!text) throw `Example : ${prefix + command} kaos distro`
-            var { data } = await axios.get(`https://api.lolhuman.xyz/api/shopee?apikey=ThadzBotZ&query=${text}`)
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/shopee?apikey=sayajiro&query=${text}`)
             var shop = 'Shopee Search : \n'
             for (var x of data.result) {
                 shop += `Name : ${x.name}\n`
@@ -1857,7 +1857,7 @@ break
             break
         case 'google':
             if (!text) throw `Example : ${prefix + command} boyolali jawa tengah`
-            var { data } = await axios.get(`https://api.lolhuman.xyz/api/gsearch?apikey=ThadzBotZ&query=${text}`)
+            var { data } = await axios.get(`https://api.lolhuman.xyz/api/gsearch?apikey=sayajiro&query=${text}`)
             var gog = 'Google Search : \n'
             for (var x of data.result) {
                 gog += `Title : ${x.title}\n`
@@ -1899,7 +1899,7 @@ break
 	    case 'ytmp3': case 'ytaudio': {
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27`
             axios
-                .get(`https://api.lolhuman.xyz/api/ytaudio2?apikey=ThadzBotZ&url=${text}`)
+                .get(`https://api.lolhuman.xyz/api/ytaudio2?apikey=sayajiro&url=${text}`)
                 .then(({ data }) => {
                 	if (data.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(data))
                     var caption = `❖ Title    : *${data.result.title}*\n`
@@ -1914,7 +1914,7 @@ break
             case 'ytmp4': {
             if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27`
             axios
-                .get(`https://api.lolhuman.xyz/api/ytvideo2?apikey=ThadzBotZ&url=${args[0]}`)
+                .get(`https://api.lolhuman.xyz/api/ytvideo2?apikey=sayajiro&url=${args[0]}`)
                 .then(({ data }) => {
                 	if (data.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(data))
                     var caption = `❖ Title    : *${data.result.title}*\n`
@@ -1976,7 +1976,7 @@ break
         case 'megumin':
         case 'wallnime':
         case 'quotesimage':
-            kagura.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=ThadzBotZ` } })
+            kagura.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=sayajiro` } })
             break
 
         case 'chiisaihentai':
@@ -1998,7 +1998,7 @@ break
         case 'biganimetiddies':
         case 'animebellybutton':
         case 'hentai4everyone':
-            kagura.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=ThadzBotZ` } })
+            kagura.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=sayajiro` } })
             break
 	    case 'couple': {
                 m.reply(mess.wait)
@@ -2535,7 +2535,7 @@ case 'chord':
 	        case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 kagura.sendMessage(m.chat, { video: { url: data.result.link }, mimetype: 'video/mp4' })
             })
             }
@@ -2543,7 +2543,7 @@ case 'chord':
             case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-              axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+              axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 kagura.sendMessage(m.chat, { video: { url: data }, mimetype: 'video/mp4' })
             })
             }
@@ -2557,7 +2557,7 @@ case 'chord':
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
                 m.reply(mess.wait)
-                axios.get(`https://api.lolhuman.xyz/api/instagram?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                axios.get(`https://api.lolhuman.xyz/api/instagram?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 var url = data.result
                 if (url.includes('.mp4')) {
                     kagura.sendMessage(m.chat, { video: { url }, mimetype: 'video/mp4' })
@@ -2569,7 +2569,7 @@ case 'chord':
             break
   case 'igdl2':
             if (!text) throw 'No Query Url!'
-            axios.get(`https://api.lolhuman.xyz/api/instagram2?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/instagram2?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 for (var x of data.result) {
                     if (x.includes('.mp4')) {
                         kagura.sendMessage(m.chat, { video: { url: x }, mimetype: 'video/mp4' })
@@ -2582,7 +2582,7 @@ case 'chord':
             case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
-                axios.get(`https://api.lolhuman.xyz/api/jooxplay?apikey=ThadzBotZ&query=${text}`).then(({ data }) => {
+                axios.get(`https://api.lolhuman.xyz/api/jooxplay?apikey=sayajiro&query=${text}`).then(({ data }) => {
                 var caption = `Title : ${data.result.info.song}\n`
                 caption += `Artists : ${data.result.info.singer}\n`
                 caption += `Duration : ${data.result.info.duration}\n`
@@ -2598,7 +2598,7 @@ case 'chord':
             case 'sportify': case 'sprtfy': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
-                axios.get(`https://api.lolhuman.xyz/api/spotify?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                axios.get(`https://api.lolhuman.xyz/api/spotify?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 var caption = `Title : ${data.result.title}\n`
                 caption += `Artists : ${data.result.artists}\n`
                 caption += `Duration : ${data.result.duration}\n`
@@ -2614,7 +2614,7 @@ case 'chord':
 	        case 'twitdl': case 'twitter': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                axios.get(`https://api.lolhuman.xyz/api/twitter?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                axios.get(`https://api.lolhuman.xyz/api/twitter?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 kagura.sendMessage(m.chat, { video: { url: data.result.link[data.result.link.length - 1].link }, mimetype: 'video/mp4' })
             })
             }
@@ -2622,14 +2622,14 @@ case 'chord':
 	        case 'fbdl': case 'fb': case 'facebook': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                axios.get(`https://api.lolhuman.xyz/api/facebook?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                axios.get(`https://api.lolhuman.xyz/api/facebook?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 kagura.sendMessage(m.chat, { video: { url: data.result }, mimetype: 'video/mp4' })
             })
             }
             break
 case 'zippyshare':
             if (!text) throw 'Masukkan Query Link!'
-            axios.get(`https://api.lolhuman.xyz/api/zippyshare?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+            axios.get(`https://api.lolhuman.xyz/api/zippyshare?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 var text = `File Name : ${data.result.name_file}\n`
                 text += `Size : ${data.result.size}\n`
                 text += `Date Upload : ${data.result.date_upload}\n`
@@ -2640,7 +2640,7 @@ case 'zippyshare':
 	        case 'pindl': case 'pinterestdl': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                axios.get(`https://api.lolhuman.xyz/api/pinterestdl?apikey=ThadzBotZ&url=${text}`).then(({ data }) => {
+                axios.get(`https://api.lolhuman.xyz/api/pinterestdl?apikey=sayajiro&url=${text}`).then(({ data }) => {
                 kagura.sendMessage(m.chat, { image: { url: data.result[0] } })
             })
             }
