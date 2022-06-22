@@ -17,7 +17,7 @@ const path = require('path')
 const os = require('os')
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
-const FormData = require("form-data");
+const FormData = require("form-data")
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
@@ -31,7 +31,7 @@ const {
     sendResponList,
     updateResponList,
     getDataResponList
-} = require('./lib/respon-list');
+} = require('./lib/respon-list')
 
 // read database
 let tebaklagu = db.data.game.tebaklagu = []
