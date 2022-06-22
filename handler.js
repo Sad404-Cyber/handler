@@ -2561,7 +2561,7 @@ case 'chord':
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                kagura.sendMessage(from, { audio: { url: `https://api.lolhuman.xyz/api/tiktokmusic?apikey=sayajiro&url=${text}` }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
+                kagura.sendMessage(m.chat, { audio: { url: `https://api.lolhuman.xyz/api/tiktokmusic?apikey=sayajiro&url=${text}` }, mimetype: 'audio/mp4', fileName: `${data.result.title}.mp3`, ptt: true })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
@@ -3623,7 +3623,7 @@ case 'addlist':
                 var args1 = q.split("@")[0]
                 var args2 = q.split("@")[1]                
                 if (!q.includes("@")) return m.reply(`Gunakan dengan cara ${command} *key@response*\n\n_Contoh_\n\n${command} tes@apa`)
-                if (isAlreadyResponList(from, args1, db_respon_list)) return m.reply(`List respon dengan key : *${args1}* sudah ada di group ini.`)
+                if (isAlreadyResponList(m.chat, args1, db_respon_list)) return m.reply(`List respon dengan key : *${args1}* sudah ada di group ini.`)
                 if (isQuotedImage || isImage) {
                     let encmedia = isQuotedImage ? JSON.parse(JSON.stringify(m).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : m
                     let media = await kagura.downloadAndSaveMediaMessage(encmedia, `./src/${sender}`)
@@ -3635,12 +3635,12 @@ case 'addlist':
                         body: fd
                     }).then(res => res.json())
                         .then((json) => {
-                            addResponList(from, args1, args2, true, `https://telegra.ph${json[0].src}`, db_respon_list)
+                            addResponList(m.chat, args1, args2, true, `https://telegra.ph${json[0].src}`, db_respon_list)
                             m.reply(`Sukses set list message dengan key : *${args1}*`)
                             if (fs.existsSync(media)) fs.unlinkSync(media)
                         })
                 } else {
-                    addResponList(from, args1, args2, false, '-', db_respon_list)
+                    addResponList(m.chat, args1, args2, false, '-', db_respon_list)
                     m.reply(`Sukses set list message dengan key : *${args1}*`)
                 }
                 break
@@ -3649,8 +3649,8 @@ case prefix + 'dellist':
                 if (!isAdmins) throw mess.admin 
                 if (db_respon_list.length === 0) return reply(`Belum ada list message di database`)
                 if (!q) return m.reply(`Gunakan dengan cara ${command} *key*\n\n_Contoh_\n\n${command} hello`)
-                if (!isAlreadyResponList(from, q, db_respon_list)) return m.reply(`List respon dengan key *${q}* tidak ada di database!`)
-                delResponList(from, q, db_respon_list)
+                if (!isAlreadyResponList(m.chat, q, db_respon_list)) return m.reply(`List respon dengan key *${q}* tidak ada di database!`)
+                delResponList(m.chat, q, db_respon_list)
                 m.reply(`Sukses delete list message dengan key *${q}*`)
                 break
             default:
@@ -3673,7 +3673,7 @@ case prefix + 'dellist':
 case prefix + 'list':
 			if (!m.isGroup) throw mess.group
                 if (db_respon_list.length === 0) return m.reply(`Belum ada list message di database`)
-                if (!isAlreadyResponListGroup(from, db_respon_list)) return m.reply(`Belum ada list message yang terdaftar di group ini`)
+                if (!isAlreadyResponListGroup(m.chat, db_respon_list)) return m.reply(`Belum ada list message yang terdaftar di group ini`)
                 var arr_rows = [];
                 for (let x of db_respon_list) {
                     if (x.id === from) {
@@ -3692,7 +3692,7 @@ case prefix + 'list':
                     }],
                     listType: 1
                 }
-                kagura.sendMessage(from, listMsg, MessageType.listMessage)
+                kagura.sendMessage(m.chat, listMsg, MessageType.listMessage)
                 break
                 if (budy.startsWith('>')) {
                     if (!isCreator) return m.reply(mess.owner)
